@@ -263,16 +263,16 @@ main{
   border-bottom:1px solid map-get($colors,blue);
 }
 #list{
-  height:78vh;
+  height:80vh;
   border-bottom:none !important;
-  overflow-y: visible;
+  overflow-y: scroll;
 }
 .headers :nth-child(n){
   text-align: center;
 }
 .headers div{
   padding-top: 7px !important;
-  font-weight: 700 !important; 
+  font-weight: 400 !important; 
 }
 .headers :nth-child(1){
   width:40%;
@@ -290,16 +290,15 @@ main{
   width:20%;
 }
 .add-task {
-  width:100%;
+  width:66%;
   background: rgba(255, 255, 255, 0);
   height: 20vh;
   color:white;
   padding-top:15px;
   padding-left:20px;
-  padding-bottom: 15px;
   display: grid;
   grid-template-rows: 100%;
-  grid-template-columns:33% 33% ;
+  grid-template-columns:50% 50% ;
   text-align: center;
   justify-content: center;
   grid-gap:0 ;
@@ -371,6 +370,10 @@ main{
   text-decoration: none;
   border-bottom:1px solid #fafafa !important;
 }
+.buttons a:hover {
+  color:map-get($colors,blue) !important;
+  background:  #fafafa !important;
+}
 .buttons :nth-child(1){
   border-right:2px solid #fafafa !important;
 }
@@ -385,8 +388,8 @@ main{
   // -8px -8px 8px 0 rgba(76, 85, 255, 0.34),
   // 8px 8px 8px 0 rgba(76, 85, 255, 0.34);
   box-shadow: 
-  -8px -8px 8px 0 rgba(76, 85, 255, 0.34),
-  12px 12px 12px 0 rgba(0,0,0,.3);
+  -8px -8px 8px 0 rgba(255, 255, 255, 0.34),
+  8px 8px 8px 0 rgba(0,0,0,.3);
   border-radius:10px;
   border:1px solid #fafafa;
 

@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!doctype html>
 <html lang="en">
 <head>
@@ -16,7 +17,6 @@
     <?php
      require_once 'crypt.php';
      if(!empty($_GET["user"])) {
-
      $DBHOST = "localhost";
      $DBUSER = "root";
      $DBPWD = "";

@@ -1,5 +1,4 @@
 <?php
-session_start();
 require_once 'crypt.php';
 if (!empty($_POST["username"]) && !empty($_POST["password"])) {
     $DBHOST = "localhost";
@@ -22,6 +21,7 @@ if (!empty($_POST["username"]) && !empty($_POST["password"])) {
         $row = $result->fetch_assoc();
         $hash = $row["password"];
         if (password_verify($_POST["password"], $hash)) {
+            session_start();
             $_SESSION["username"] = $_POST["username"];
             // F***ing session doesn't work!
             $_SESSION["user_id"] = $row["user_id"];

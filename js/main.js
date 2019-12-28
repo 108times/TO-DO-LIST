@@ -132,14 +132,14 @@ window.onload = date;
 document.getElementById("day").addEventListener("click", date);
 
 
-auth2 = document.getElementById("auth-2")
-auth2.addEventListener("mouseover", function () {
-    home_link.style.color = orange;
-});
-
-home_link.addEventListener("mouseenter", function () {
-    event.target.style.color = "orange";
-});
+// auth2 = document.getElementById("auth-2");
+// auth2.addEventListener("mouseover", function () {
+//     home_link.style.color = orange;
+// });
+//
+// home_link.addEventListener("mouseenter", function () {
+//     event.target.style.color = "orange";
+// });
 $(document).ready(function () {
     let auth2 = $("#auth-2");
     let home_link = $("#home-link");
