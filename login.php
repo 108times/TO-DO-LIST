@@ -33,7 +33,7 @@ if (isset($_GET["email"])){
         <div class="header-underline"></div>
         <div class="form-group">
             <label class="hidden" for="exampleInputEmail1">Email address</label>
-            <input type="username" class="form-control" id="exampleInputEmail1" placeholder="email"
+            <input type="text" class="form-control" id="exampleInputEmail1" placeholder="email"
                    name="username"
                    aria-describedby="emailHelp">
         </div>
@@ -49,19 +49,22 @@ if (isset($_GET["email"])){
 <!--        </div>-->
 
         <button type="submit" class="btn btn-primary submit">Submit</button>
-        <div class="form-group" style="margin-top:30px">
-            <h5>Don't have an account?<a  href="signup.php"> Sign up</a></h5>
+        <div class="form-group " style="margin-top:30px">
+        <h5>Don't have an account?<a class='auth-link'  href="signup.php">Sign up</a></h5>
         </div>
     </form>
 </div>
-<div class="auth-2">
+<div class="auth-2" id="auth-2" >
     <a class="signup-icon" href="home.php">
         <figure>
-            <figcaption><b class="whitey">TO DO LIST</b></figcaption>
+            <!-- <figcaption><b class="whitey">TO DO LIST</b></figcaption> -->
             <img src="images/security-icon-white.png" alt="icon">
         </figure>
+        <div id='home-link' class="home-link">
+        <h2>Home page</h2>
+        <img src='images/right-arrow.png' alt='#'>
+        </div>
     </a>
-</div>
 </div>
 <!-- jQuery library -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
@@ -74,20 +77,26 @@ if (isset($_GET["email"])){
 
 <script src="js/main.js"></script>
 <script>
-$(document).ready(function () {
-    let auth2 = $("#auth-2");
-    let home_link = $("#home-link")
+    function hover(){
+        let auth2 = $("#auth-2");
+        let home_link = $("#home-link");
 
-    auth2.on("mouseenter", function () {
-        home_link.css({
-            "opacity": "1"
+        auth2.on("mouseenter", function () {
+            home_link.css({
+                "background":"#082471",
+                "color":"#fafafa"
+            })
+        }).on("mouseleave", function () {
+            home_link.css({
+                "background":"#fafafa",
+                "color":"#082471"
+            })
         })
-    }).on('mouseleave', function () {
-        home_link.css({
-            "opacity": "0"
-        })
-    })
-});
+    }
+    $(document).ready(function () {
+
+       hover();
+    });
 </script>
 </body>
 </html>

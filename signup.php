@@ -30,7 +30,7 @@
 
         <button type="submit" class="btn btn-primary submit">Submit</button>
         <div class="form-group" style="margin-top:60px">
-        <h5>Already have an account?<a  href="login.php"> Log In</a></h5>
+        <h5>Already have an account?<a class='auth-link'  href="login.php">Log In </a></h5>
         </div>
     </form>
 
@@ -38,7 +38,7 @@
 <div class="auth-2" id="auth-2">
     <a class="signup-icon" href="home.php">
         <figure>
-            <figcaption><b class="whitey">TO DO LIST</b></figcaption>
+            <!-- <figcaption><b class="whitey">TO DO LIST</b></figcaption> -->
             <img src="images/security-icon-white.png" alt="icon">
         </figure>
         <figure>
@@ -73,20 +73,26 @@ if (isset($_GET["email"])) {
 
 <script src="js/main.js"></script>
 <script>
-$(document).ready(function () {
-    let auth2 = $("#auth-2");
-    let home_link = $("#home-link")
+   function hover(){
+        let auth2 = $("#auth-2");
+        let home_link = $("#home-link");
 
-    auth2.on("mouseenter", function () {
-        home_link.css({
-            "opacity": "1"
+        auth2.on("mouseenter", function () {
+            home_link.css({
+                "background":"#082471",
+                "color":"#fafafa"
+            })
+        }).on("mouseleave", function () {
+            home_link.css({
+                "background":"#fafafa",
+                "color":"#082471"
+            })
         })
-    }).on('mouseleave', function () {
-        home_link.css({
-            "opacity": "0"
-        })
-    })
-});
+    }
+    $(document).ready(function () {
+
+       hover();
+    });
 </script>
 </body>
 </html>

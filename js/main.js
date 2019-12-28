@@ -142,7 +142,7 @@ home_link.addEventListener("mouseenter", function () {
 });
 $(document).ready(function () {
     let auth2 = $("#auth-2");
-    let home_link = $("#home-link")
+    let home_link = $("#home-link");
 
     auth2.on("mouseenter", function () {
         home_link.css({

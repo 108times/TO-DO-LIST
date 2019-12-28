@@ -68,8 +68,8 @@
         <h2><b>TO DO LIST</b> lets you work more collaboratively and get more done.</h2>
         <div class="dot dot-1"></div>
         <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-        <div class="dot dot-4"></div>
+        <!-- <div class="dot dot-3"></div> -->
+        <!-- <div class="dot dot-4"></div> -->
     </div>
     <div id="homepage-content-3" class=" card">
         <h3><b>TO DO LIST</b> enable you to organize and prioritize your life in a fun, flexible, and rewarding way.</h3>
@@ -78,17 +78,17 @@
             <img src="images/security-icon.png" alt="">
         </figure>
         <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
-        <div class="dot dot-3"></div>
-        <div class="dot dot-4"></div>    
+        <div class="dot dot-2"></div> 
+        <!-- <div class="dot dot-3"></div> -->
+        <!-- <div class="dot dot-4"></div>    -->
     </div>
     <div id="homepage-content" class="card ">
-        <h1 id='homepage-h1'>Organize it all with<br> <b>TO DO LIST</b> 
+        <h1 id='homepage-h1'>Organize it all
         </h1>
         <a id='begin' href="display_task.php?user=<?=$_GET['user']
         ?>">Begin<img src='images/right-arrow.png'></a>
-      <div class="dot dot-1"></div>
-        <div class="dot dot-2"></div>
+      <!-- <div class="dot dot-1"></div> -->
+        <!-- <div class="dot dot-2"></div> -->
         <div class="dot dot-3"></div>
         <div class="dot dot-4"></div>
     </div>
