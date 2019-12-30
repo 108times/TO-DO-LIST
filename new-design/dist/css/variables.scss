@@ -1,0 +1,28 @@
+
+$document-width:100vw;
+$document-height:100vh;
+
+$primary-color:#ffffff;
+$secondary-color: #f3f3f3;
+$accent-color:#89B4C4;
+$highlight-color:rgb(160, 212, 231);
+
+$input-border-radius:0px;
+$border-radius:15px;
+// $border-black:3px solid black;
+$border-black:none;
+
+
+$font-size:62,5%;
+$font-family: 'Arimo', sans-serif;
+
+$text-color:#333333;
+$text-color-secondary: #7E7E7E;
+$font-weights : (
+    "regular":400,
+    "medium":500,
+    "bold":700
+);
+$mobile: 800px;
+
+@import './shadows';

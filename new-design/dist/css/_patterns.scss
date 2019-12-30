@@ -1,0 +1,17 @@
+
+.icon{
+    width:auto;
+    height:auto;
+    max-height: 24px;
+    max-width: 24px;
+    background-size: cover;
+    background-position: center;
+}
+.logo {
+    max-height:40px;
+    max-width:100px;
+}
+.active {
+    font-weight: map-get($map: $font-weights, $key: bold);
+    background-color: $primary-color;
+}

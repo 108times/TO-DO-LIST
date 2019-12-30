@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>To do list</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link rel="stylesheet" href="./dist/css/main.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="header__left">
+            <img class="icon logo header__left__img" src="./img/logo.png" alt="logo">
+        </div>
+        <div class="header__middle">
+            <div class="header__middle__left">
+                <div class="header__middle__left__mobile-menu-toggle">
+                    <i class="header__middle__left__mobile-menu-toggle__line"></i>
+                    <i class="header__middle__left__mobile-menu-toggle__line"></i>
+                    <i class="header__middle__left__mobile-menu-toggle__line"></i>
+                </div>
+                <div class="header__middle__left__content">
+                    <img class="icon header__middle__left__content__icon" src="./img/search.png" alt="logo">
+                    <input placeholder="Search" type="text" name="search" id="search"
+                        class="header__middle__left__content__search">
+                </div>
+
+            </div>
+            <div class="header__middle__right">
+                <ul class="header__middle__right__settings">
+                    <li class="header__middle__right__settings__item">
+                        <img class="icon header__middle__right__settings__item_item-icon" src="./img/add.png"
+                            alt="logo">
+                    </li class="header__middle__right__settings__item">
+                    <li class="header__middle__right__settings__item">
+                        <img class="icon header__middle__right__settings__item_item-icon" src="./img/settings.png"
+                            alt="logo">
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="header__right"></div>
+    </header>
+
+    <main class="main">
+
+        <div class="main__content">
+            <div class="main__content__filters">
+                <div class="main__content__filters__content">
+                    <ul class="main__content__filters__content__items">
+                        <li class="main__content__filters__content__items__item">Inbox</li>
+                        <li class="main__content__filters__content__items__item active">Today</li>
+                        <li class="main__content__filters__content__items__item">Next 7 days</li>
+                    </ul>
+                </div>
+                <div class="main__content__filters__empty-space"></div>
+            </div>
+            <div class="main__content__tasks__empty-space-left">
+
+            </div>
+            <div class="main__content__tasks__body">
+
+            </div>
+            <div class="main__content__tasks__empty-space-right">
+
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+
+<!-- Popper JS -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+<script src="dist/js/main.js"></script>
+
+</html>
