@@ -1,3 +1,4 @@
+import { priorityHidePopUp } from './choose-priority.js';
 let date_inp = document.querySelector(".main__content__tasks__body__task__insert-data__select-date__overlay");
 export const popup = document.getElementById("date-popup");
 // let popup_clicked = false;
@@ -27,7 +28,7 @@ export function popUpClick() {
 }
 
 export function popUpLeave() {
-
+    priorityHidePopUp();
     let popup = document.getElementById("date-popup");
     popup.style.opacity = 0;
     popup.style.top = "200%";

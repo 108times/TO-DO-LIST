@@ -234,9 +234,8 @@ body {
                 }
             }
             &__items__item:hover{
-                background-color: $accent-color;
-                border: $border-black;
-                color:$primary-color;
+                transition-duration: .2s;
+              box-shadow: $shadow-card;
                 // box-shadow: $shadow-card;
             }
         }
@@ -289,7 +288,7 @@ body {
                 &__task{
                     display: block;
                     padding:10px;
-                    cursor: pointer;
+                    // cursor: pointer;
                     height:90px;
                     position: relative;
                     z-index: 121;
@@ -297,11 +296,16 @@ body {
                         &__add-button{
                         width:100%;
                         height:100%;
+                        &__content{
+                            cursor: pointer;
+                        }
                             &__paragraph{
                                 display: inline;
+                                padding-left:15px;
                                 }
-                            &__add-icon{
-                                padding:3px;
+                            
+                                &__add-icon{
+                                padding:5px;
                                 margin-top:-4px;
                                 display: inline-block;
                                 border-radius: 50%;
@@ -318,7 +322,7 @@ body {
                         height: 100%;
                         position: absolute;
                         left:0;
-                        top:0%;
+                        top:50%;
                         transition-duration: $transition-duration;
                         z-index: 20;
                         padding:5px;
@@ -460,9 +464,12 @@ body {
                                                     position: absolute;
                                                     width:90%;
                                                     height:200%;
-                                                    top:-120%;
+                                                    top:-220%;
+                                                    transition-duration: $transition-duration ;
                                                     left:-5%;
                                                     display: block;
+                                                    opacity: 0;
+                                                    pointer-events: none;
                                                     background-color: $primary-color;
                                                     border-radius: $border-radius;
                                                     border: $border-gray;
@@ -537,6 +544,7 @@ body {
                                                     color:$accent-color;
                                                     font-weight:map-get($map: $font-weights, $key: bold) ;
                                                     text-decoration: none;
+                                                    width:50%;
                                                 }
                                                 &__save-button {
                                                     cursor: pointer;
@@ -571,18 +579,24 @@ body {
                             }
                             &__button-submit{
                                 top:50%;
-                                width:55%;
+                                width:calc(59% - 3px);
                                 height:40px;
                                 position: absolute;
                                 left:5px;
                                 background-color: $accent-color;
                                 color:$primary-color;
                                 border-radius: $border-radius;
-                                border:none;
+                                border:$border-gray;
                                 font-weight: map-get($map: $font-weights, $key: medium);
+                                &__overlay{
+                                    width:100%;
+                                    height:100%;
+                                    position: absolute;
+                                    top:0;
+                                }
                             }
                             &__button-submit:hover{
-                                background-color: $accent-color-darker;
+                                box-shadow: $shadow-card;
                             }
                             &__button-cancel {
                                 top:50%;
@@ -590,25 +604,64 @@ body {
                                 height:40px;
                                 position: absolute;
                                 left:calc(70%-5px);
-                                background-color: $accent-color;
-                                color:$primary-color;
+                                background-color: $accent-color-darker-reverse;
+                                color:$text-color;
                                 border-radius: $border-radius;
-                                border:none;
-                               
+                                border:$border-gray;
+                               &__overlay{
+                                   width:100%;
+                                   height:100%;
+                                   position: absolute;
+                                   top:0;
+                               }
                             }
                             &__button-cancel:hover {
-                                background-color: $accent-color-darker;
+                                box-shadow: $shadow-card;
 
                             }
                             &__option-priority{
                                 top:50%;
-                                left:57%;
+                                left:61%;
+                                cursor: pointer;
                                 position: absolute;
-                                background-color: $accent-color;
+                                background-color: $accent-color-darker-reverse;
                                 color:$primary-color;
+                                border: $border-gray;
+                                &__pop-up {
+                                    position: absolute;
+                                    width:50%;
+                                    left:37%;
+                                    height:150%;
+                                    background-color: $primary-color;
+                                    border-radius: $border-radius;
+                                    box-shadow: $shadow-card;
+                                    top:100%;
+                                    opacity: 0;
+                                    pointer-events: none;
+                                    @include flexCenter(column);
+                                        &__option-priority-1{
+                                            width: 100%;
+                                            height:25%;
+                                            display: block;
+                                            padding:3px;
+                                        }
+                                        &__option-priority-1:hover{
+                                            background-color: $accent-color-darker-reverse;
+                                            cursor: pointer;
+                                        }
+                                        &__option-priority-2{
+                                            @extend .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1;
+                                        }
+                                        &__option-priority-3{
+                                            @extend .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1;
+                                        }
+                                        &__option-priority-4{
+                                            @extend .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1;
+                                        }
+                                }
                             }
                             &__option-priority:hover{
-                                background-color: $accent-color-darker;   
+                                box-shadow: $shadow-card;
                             }
                         }  
                 }

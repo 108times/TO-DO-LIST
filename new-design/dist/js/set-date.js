@@ -96,6 +96,7 @@ const tomorrow_weekdate = document.getElementById('tomorrow-weekday');
 
 const input = document.getElementById('date-inp');
 export function setDate() {
+    input.value = today_full_date;
     today_title_date.innerText = today_week_day + " " + today_day + " " + today_month;
     today_1.innerText = today_day;
     today_2.innerText = today_day;

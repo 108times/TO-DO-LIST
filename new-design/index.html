@@ -86,9 +86,12 @@
                     <!-- PHp tasks there -->
                     <div class="main__content__tasks__body__task">
                         <div class="main__content__tasks__body__task__add-button">
-                            <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
-                                src="./img/add.png" alt="">
-                            <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
+                            <div class="main__content__tasks__body__task__add-button__content">
+                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                    src="./img/add.png" alt="">
+                                <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
+                            </div>
+
                         </div>
                         <form method="GET" action="index.html" class="main__content__tasks__body__task__insert-data">
                             <input type="text" class="main__content__tasks__body__task__insert-data__input" name="task"
@@ -159,7 +162,7 @@
                                                     for="time">Time</label>
                                                 <input
                                                     class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input"
-                                                    type="text" name="time" placeholder="12:00">
+                                                    type="time" name="time" placeholder="12:00">
                                             </div>
 
                                             <div
@@ -176,12 +179,40 @@
                                     </div>
                                 </div>
                             </div>
-                            <button class="main__content__tasks__body__task__insert-data__button-submit type="
-                                submit">Add Task</button>
-                            <button class="main__content__tasks__body__task__insert-data__button-cancel" type="
-                                cancel">Cancel</button>
-                            <img src="./img/flag.png" alt=""
+                            <button class="main__content__tasks__body__task__insert-data__button-submit type=" submit">
+                                <div class="main__content__tasks__body__task__insert-data__button-submit__overlay">
+                                </div>
+                                Add Task
+                            </button>
+                            <button class="main__content__tasks__body__task__insert-data__button-cancel">
+                                <div class="main__content__tasks__body__task__insert-data__button-cancel__overlay">
+                                </div>
+                                Cancel
+                            </button>
+                            <img src="./img/flag-4.png" alt=""
                                 class="icon-big main__content__tasks__body__task__insert-data__option-priority">
+                            <div class="main__content__tasks__body__task__insert-data__option-priority__pop-up">
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1">
+                                    <img class="icon-small overlay" src="/img/flag-1.png" alt="">
+                                    Priority 1
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-2">
+                                    <img class="icon-small overlay" src="/img/flag-2.png" alt="">
+                                    Priority 2
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-3">
+                                    <img class="icon-small overlay" src="/img/flag-3.png" alt="">
+                                    Prioirty 3
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-4">
+                                    <img class="icon-small overlay active" src="/img/flag-4.png" alt="">
+                                    Priority 4
+                                </div>
+                            </div>
                         </form>
                     </div>
                 </div>

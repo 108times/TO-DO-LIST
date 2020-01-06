@@ -1,10 +1,12 @@
 import { primary_color, secondary_color, accent_color, accent_color_darker, text_color } from './variables.js';
 import { popUpClick, popUpLeave, popup } from './pop-up_click.js';
-import { addTaskClick, addTaskHover } from './add-task.js';
+import { addTaskClick, addTaskHover, cancelClick } from './add-task.js';
 import { becomeMenu, becomeX, menuToggle } from './filters_menu.js';
 import { search, searchbar, search_icon, hideSearch, showSearch, searchHover } from './search.js';
 import { setDate } from './set-date.js';
 import { filterHover } from './filter-hover.js';
+import { addTime } from './add-time.js';
+import { choosePriority } from './choose-priority.js';
 (function () {
     const input = document.getElementById('date-inp');
     const container = document.getElementById('calendar');
@@ -83,3 +85,6 @@ menuToggle();
 addTaskClick();
 popUpClick();
 filterHover();
+cancelClick();
+addTime();
+choosePriority();
