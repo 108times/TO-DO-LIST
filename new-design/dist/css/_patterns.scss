@@ -2,16 +2,66 @@
 .icon{
     width:auto;
     height:auto;
-    max-height: 24px;
-    max-width: 24px;
+    max-height: 30px;
+    max-width: 30px;
     background-size: cover;
     background-position: center;
+    padding:5px;
+    border-radius: $border-radius;
+    box-sizing: border-box;
+}
+.icon:hover{
+    background-color: $color-transparent;
+}
+.icon-small{
+    @extend .icon;
+    max-height: 25px;
+    max-width: 25px;
+    min-width: 25px;
+    min-height: 25px;
+}
+.overlay{
+    background-color: $accent-color-darker-reverse;
+    border:$border-gray;
+}
+.options-span {
+    margin-left:10px;
+}
+.icon-big{
+    @extend .icon;
+    max-height: 40px;
+    max-width: 40px;
+    padding:10px;
 }
 .logo {
-    max-height:40px;
+    max-height:30px;
     max-width:100px;
+    padding:2px;
+    border:1px solid $accent-color;
+}
+.logo:hover{
+    background-color: $color-transparent;
+    border:1px solid $text-color;
 }
 .active {
-    font-weight: map-get($map: $font-weights, $key: bold);
-    background-color: $primary-color;
+    font-weight: map-get($map: $font-weights, $key: medium);
+    border-radius: $border-radius;
+    background-color: $accent-color-darker-reverse;
+    border: $border-black !important;
+    // box-shadow: $shadow-card;
 }
+.mobile-click{
+    left:0;
+}
+// .popup-opened{
+//     opacity : 1 !important;
+//     top : 100% !important;
+//     z-index : 50 !important; 
+//     pointer-events : all !important;
+// }
+// .popup-closed{
+//     opacity : 0 !important;
+//     top : 200% !important;
+//     z-index : 0 !important; 
+//     pointer-events : none !important;
+// }

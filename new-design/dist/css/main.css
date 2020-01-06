@@ -1,27 +1,253 @@
 :root {
   font-size: 16px; }
 
+html {
+  overflow-y: scroll;
+  overflow-x: hidden; }
+
 * {
   padding: 0;
   margin: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-.icon {
+.icon, .icon-small, .icon-big {
   width: auto;
   height: auto;
-  max-height: 24px;
-  max-width: 24px;
+  max-height: 30px;
+  max-width: 30px;
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  padding: 5px;
+  border-radius: 4px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+
+.icon:hover, .icon-small:hover, .icon-big:hover {
+  background-color: rgba(255, 255, 255, 0.3); }
+
+.icon-small {
+  max-height: 25px;
+  max-width: 25px;
+  min-width: 25px;
+  min-height: 25px; }
+
+.overlay {
+  background-color: #c7dae8;
+  border: 1px solid #a8a8a8; }
+
+.options-span {
+  margin-left: 10px; }
+
+.icon-big {
+  max-height: 40px;
+  max-width: 40px;
+  padding: 10px; }
 
 .logo {
-  max-height: 40px;
-  max-width: 100px; }
+  max-height: 30px;
+  max-width: 100px;
+  padding: 2px;
+  border: 1px solid #4B86B4; }
+
+.logo:hover {
+  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px solid #333333; }
 
 .active {
-  font-weight: 700;
-  background-color: #ffffff; }
+  font-weight: 500;
+  border-radius: 4px;
+  background-color: #c7dae8;
+  border: 1px solid rgba(0, 0, 0, 0) !important; }
+
+.mobile-click {
+  left: 0; }
+
+the-datepicker__container .the-datepicker__main {
+  border-top-left-radius: 0; }
+
+.the-datepicker__container.the-datepicker__container--over .the-datepicker__main {
+  border-top-left-radius: 0.3em;
+  border-bottom-left-radius: 0; }
+
+.the-datepicker__container.the-datepicker__container--left .the-datepicker__main {
+  border-top-left-radius: 0.3em;
+  border-top-right-radius: 0; }
+
+.the-datepicker__container.the-datepicker__container--over.the-datepicker__container--left .the-datepicker__main {
+  border-bottom-left-radius: 0.3em;
+  border-top-right-radius: 0.3em;
+  border-bottom-right-radius: 0; }
+
+.the-datepicker__main {
+  background-color: #ffffff;
+  border-radius: 0.3em;
+  padding: 0.4em;
+  line-height: .5em;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box; }
+  @media (max-width: 500px) {
+    .the-datepicker__main {
+      padding: 0.3em;
+      line-height: .4em; } }
+
+.the-datepicker__main .the-datepicker__body {
+  margin-top: 1em; }
+
+.the-datepicker__main th.the-datepicker__week-day {
+  width: 2.1em;
+  min-width: 2.1em;
+  max-width: 2.1em;
+  padding: 0.4em 0;
+  text-align: center;
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #666;
+  font-size: 0.85em; }
+
+.the-datepicker__main a.the-datepicker__button {
+  display: block;
+  width: 2.1em;
+  min-width: 2.1em;
+  max-width: 2.1em;
+  padding: 0.4em 0;
+  text-decoration: none;
+  text-align: center;
+  color: #007eff;
+  border-radius: 0.3em; }
+
+.the-datepicker__main a.the-datepicker__button:hover {
+  background-color: #d1e8ff;
+  text-decoration: none; }
+
+.the-datepicker__main .the-datepicker__title {
+  display: inline-block;
+  width: 80%; }
+
+.the-datepicker__main .the-datepicker__title-content {
+  display: inline-block;
+  padding: 0.5em; }
+
+.the-datepicker__main .the-datepicker__control {
+  display: inline-block;
+  width: 30%;
+  text-align: right; }
+
+.the-datepicker__main .the-datepicker__reset,
+.the-datepicker__main .the-datepicker__close {
+  display: inline-block;
+  font-weight: bold; }
+
+.the-datepicker__main .the-datepicker__navigation {
+  margin-top: 0.3em; }
+
+.the-datepicker__main .the-datepicker__go {
+  display: inline-block;
+  width: 15%; }
+
+.the-datepicker__main .the-datepicker__go a.the-datepicker__button {
+  display: inline-block;
+  font-weight: bold; }
+
+.the-datepicker__main .the-datepicker__go-next {
+  text-align: right; }
+
+.the-datepicker__main .the-datepicker__state {
+  display: inline-block;
+  width: 70%; }
+
+.the-datepicker__main .the-datepicker__month {
+  display: inline-block;
+  width: 62%;
+  text-align: center; }
+
+.the-datepicker__main .the-datepicker__year {
+  display: inline-block;
+  width: 38%;
+  text-align: center; }
+
+.the-datepicker__main .the-datepicker__month-year {
+  text-align: center; }
+
+.the-datepicker__main select.the-datepicker__select {
+  font-size: 0.9em;
+  margin: 0;
+  padding: 0;
+  border-radius: 4px; }
+
+.the-datepicker__main table.the-datepicker__calendar {
+  display: table;
+  border-collapse: collapse; }
+
+.the-datepicker__main table.the-datepicker__calendar thead {
+  display: table-header-group; }
+
+.the-datepicker__main table.the-datepicker__calendar tbody {
+  display: table-row-group; }
+
+.the-datepicker__main table.the-datepicker__calendar tr {
+  display: table-row; }
+
+.the-datepicker__main table.the-datepicker__calendar tr td,
+.the-datepicker__main table.the-datepicker__calendar tr th {
+  display: table-cell; }
+
+.the-datepicker__main td.the-datepicker__cell {
+  padding: 0; }
+
+.the-datepicker__main td.the-datepicker__cell a.the-datepicker__button {
+  padding: 0.1em; }
+
+.the-datepicker__main td.the-datepicker__cell a.the-datepicker__button .the-datepicker__day-content {
+  display: block;
+  padding: 0.6em 0; }
+
+.the-datepicker__main td.the-datepicker__day a.the-datepicker__button .the-datepicker__day-content {
+  text-align: center;
+  border-radius: 0.3em; }
+
+.the-datepicker__main td.the-datepicker__day a.the-datepicker__button:hover {
+  background-color: transparent; }
+
+.the-datepicker__main td.the-datepicker__day a.the-datepicker__button:hover .the-datepicker__day-content {
+  background-color: #d1e8ff; }
+
+.the-datepicker__main td.the-datepicker__day--highlighted a.the-datepicker__button .the-datepicker__day-content {
+  background-color: #d1e8ff; }
+
+.the-datepicker__main td.the-datepicker__day--outside a.the-datepicker__button {
+  color: #333333; }
+
+.the-datepicker__main td.the-datepicker__day--unavailable a.the-datepicker__button {
+  color: #aaa; }
+
+.the-datepicker__main td.the-datepicker__day--unavailable a.the-datepicker__button:hover .the-datepicker__day-content {
+  background-color: transparent; }
+
+.the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button,
+.the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button {
+  color: #fff; }
+
+.the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button .the-datepicker__day-content,
+.the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button .the-datepicker__day-content {
+  background-color: #007eff; }
+
+.the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button:hover .the-datepicker__day-content,
+.the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button:hover .the-datepicker__day-content {
+  background-color: #007eff; }
+
+.the-datepicker__main .the-datepicker__day--weekend,
+.the-datepicker__main .the-datepicker__week-day--weekend,
+.the-datepicker__main td.the-datepicker__day--today {
+  font-weight: bold; }
+
+.the-datepicker__deselect-button {
+  text-decoration: none;
+  color: #007eff;
+  font-weight: bold; }
+
+.the-datepicker__deselect-button:hover {
+  text-decoration: none; }
 
 body {
   background: #ffffff;
@@ -29,21 +255,20 @@ body {
   width: 100vw;
   height: 100vh;
   font-size: 62, 5%;
-  font-family: "Arimo", sans-serif; }
+  font-family: "Montserrat", sans-serif; }
 
 .header {
   display: -ms-grid;
   display: grid;
   width: 100%;
-  -ms-grid-columns: 30% 40% 20%;
-      grid-template-columns: 30% 40% 20%;
+  -ms-grid-columns: 40% 40% 20%;
+      grid-template-columns: 40% 40% 20%;
   -ms-grid-rows: 100%;
       grid-template-rows: 100%;
-  height: 55px;
-  background: #89B4C4;
+  height: 45px;
+  background: #4B86B4;
   position: fixed;
-  z-index: 10;
-  border-bottom: none; }
+  z-index: 1110; }
   @media (max-width: 800px) {
     .header {
       -ms-grid-columns: 0% 100% 0%;
@@ -61,6 +286,10 @@ body {
         grid-template-columns: 50% 50%;
     -ms-grid-rows: 100%;
         grid-template-rows: 100%; }
+    @media (max-width: 800px) {
+      .header .header__middle {
+        -ms-grid-columns: 70% 30%;
+            grid-template-columns: 70% 30%; } }
     .header .header__middle__left {
       display: -webkit-box;
       display: -ms-flexbox;
@@ -94,24 +323,46 @@ body {
         -webkit-box-pack: space-evenly;
             -ms-flex-pack: space-evenly;
                 justify-content: space-evenly;
-        padding-left: 10px;
-        padding-right: 10px;
-        height: 80%;
-        cursor: pointer; }
+        margin-left: 5%;
+        padding-left: 2%;
+        padding-right: 15%;
+        height: 60%;
+        cursor: pointer;
+        -webkit-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+        -webkit-transition-timing-function: ease;
+                transition-timing-function: ease; }
         @media (max-width: 800px) {
           .header .header__middle__left__mobile-menu-toggle {
             display: -webkit-box;
             display: -ms-flexbox;
             display: flex;
-            width: 20%; } }
+            width: 10%; } }
         .header .header__middle__left__mobile-menu-toggle__line {
           width: 30px;
           height: 5px;
-          background-color: #333333; }
+          background-color: black;
+          -webkit-transform-origin: 0% 0%;
+                  transform-origin: 0% 0%;
+          -webkit-transition-duration: 0.3s;
+                  transition-duration: 0.3s;
+          -webkit-transition-timing-function: ease;
+                  transition-timing-function: ease; }
+      .header .header__middle__left__mobile-menu-toggle :nth-child(n) {
+        -ms-flex-item-align: start;
+            align-self: flex-start; }
+      .header .header__middle__left__mobile-menu-toggle :nth-child(2) {
+        -webkit-transition-duration: none;
+                transition-duration: none; }
       .header .header__middle__left__content {
-        border-radius: 0px;
-        border-top-left-radius: 15px;
-        border-bottom-right-radius: 15px;
+        border-radius: 4px;
+        -webkit-transition-duration: 0.3s;
+                transition-duration: 0.3s;
+        position: relative;
+        z-index: 100;
+        width: 100%;
+        margin-left: 15px;
+        cursor: pointer;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -125,20 +376,31 @@ body {
         -webkit-box-direction: normal;
             -ms-flex-direction: row;
                 flex-direction: row; }
+        .header .header__middle__left__content__icon {
+          padding: 2px;
+          position: absolute;
+          left: 5px; }
         .header .header__middle__left__content__search {
-          border-radius: 0px;
-          border-top-left-radius: 15px;
-          border-bottom-right-radius: 15px;
+          border-radius: 4px;
           padding: 3px;
-          width: 98%;
-          background-color: #89B4C4;
+          width: 100%;
+          background-color: #4B86B4;
           border: none;
+          margin-left: 40px;
+          -webkit-transition-duration: 0.3s;
+                  transition-duration: 0.3s;
           color: #333333; }
           @media (max-width: 800px) {
             .header .header__middle__left__content__search {
               width: 80%; } }
-      .header .header__middle__left__content:hover {
-        background-color: #ffffff; }
+        .header .header__middle__left__content__search::-webkit-input-placeholder {
+          color: #333333; }
+        .header .header__middle__left__content__search:-ms-input-placeholder {
+          color: #333333; }
+        .header .header__middle__left__content__search::-ms-input-placeholder {
+          color: #333333; }
+        .header .header__middle__left__content__search::placeholder {
+          color: #333333; }
     .header .header__middle__right {
       width: 60%;
       justify-self: flex-end;
@@ -188,65 +450,479 @@ body {
           cursor: pointer;
           margin-top: 12px; }
 
-.main .main__content {
-  height: 100%; }
-  .main .main__content__filters {
-    display: -ms-grid;
-    display: grid;
-    padding-top: 2%;
-    -ms-grid-rows: 38% 60%;
-        grid-template-rows: 38% 60%;
-    -ms-grid-columns: 100%;
-        grid-template-columns: 100%;
-    position: fixed;
-    border-right: none;
-    width: 30%;
-    height: 100vh;
-    top: 55px;
-    z-index: 0;
-    left: 0;
-    background-color: #f3f3f3; }
-    @media (max-width: 800px) {
-      .main .main__content__filters {
-        left: -30%; } }
-    .main .main__content__filters__content__items {
+.main {
+  height: calc( 100% - 45px);
+  width: 100%;
+  display: block;
+  position: absolute;
+  top: 45px; }
+  .main .main__content {
+    height: 100%; }
+    .main .main__content__filters {
+      display: -ms-grid;
+      display: grid;
+      padding-top: 2%;
+      -ms-grid-rows: 38% 60%;
+          grid-template-rows: 38% 60%;
+      -ms-grid-columns: 100%;
+          grid-template-columns: 100%;
+      -webkit-transition-timing-function: ease;
+              transition-timing-function: ease;
+      -webkit-transition-duration: 0.3s;
+              transition-duration: 0.3s;
+      position: fixed;
+      width: 40%;
+      height: 100vh;
+      top: 45px;
+      z-index: 2110;
+      left: 0;
+      background-color: #fafafa; }
+      @media (max-width: 800px) {
+        .main .main__content__filters {
+          left: -100%;
+          width: 100%; } }
+      .main .main__content__filters__content__items {
+        width: 100%;
+        padding-left: 45%;
+        list-style: none;
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-pack: center;
+            -ms-flex-pack: center;
+                justify-content: center;
+        -webkit-box-align: center;
+            -ms-flex-align: center;
+                align-items: center;
+        -webkit-box-orient: vertical;
+        -webkit-box-direction: normal;
+            -ms-flex-direction: column;
+                flex-direction: column;
+        -webkit-box-pack: space-evenly;
+            -ms-flex-pack: space-evenly;
+                justify-content: space-evenly; }
+        @media (max-width: 800px) {
+          .main .main__content__filters__content__items {
+            padding-left: 0; } }
+      .main .main__content__filters__content__items__item {
+        display: block;
+        width: 90%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 15px;
+        margin-top: 5px;
+        border-radius: 4px;
+        cursor: pointer;
+        border: 1px solid #fafafa; }
+        .main .main__content__filters__content__items__item__span {
+          padding-left: 10px;
+          position: relative;
+          top: 2px; }
+        .main .main__content__filters__content__items__item__icon-today {
+          display: inline-block;
+          font-size: 70%;
+          text-align: center;
+          padding: 3px;
+          color: #333333; }
+      .main .main__content__filters__content__items__item:hover {
+        background-color: #4B86B4;
+        border: 1px solid rgba(0, 0, 0, 0);
+        color: #ffffff; }
+    .main .main__content__tasks {
       width: 100%;
-      padding-left: 55%;
-      list-style: none;
-      display: -webkit-box;
-      display: -ms-flexbox;
-      display: flex;
-      -webkit-box-pack: center;
-          -ms-flex-pack: center;
-              justify-content: center;
-      -webkit-box-align: center;
-          -ms-flex-align: center;
-              align-items: center;
-      -webkit-box-orient: vertical;
-      -webkit-box-direction: normal;
-          -ms-flex-direction: column;
-              flex-direction: column; }
-    .main .main__content__filters__content__items__item {
-      display: block;
-      width: 100%;
-      color: #333333;
-      padding-top: 10px;
-      padding-bottom: 10px;
-      padding-left: 15px;
-      cursor: pointer; }
-    .main .main__content__filters__content__items__item:hover {
-      background-color: #ffffff;
-      border: 1px solid #333333;
-      border-right: none; }
-  .main .main__content__tasks {
-    display: -ms-grid;
-    display: grid;
-    -ms-grid-columns: 30% 40% 20%;
-        grid-template-columns: 30% 40% 20%;
-    -ms-grid-rows: 100%;
-        grid-template-rows: 100%; }
-    @media (max-width: 800px) {
-      .main .main__content__tasks {
-        -ms-grid-columns: 0% 100% 20%;
-            grid-template-columns: 0% 100% 20%; } }
+      height: 100%;
+      display: -ms-grid;
+      display: grid;
+      -ms-grid-columns: 40% 40% 20%;
+          grid-template-columns: 40% 40% 20%;
+      -ms-grid-rows: 100%;
+          grid-template-rows: 100%; }
+      @media (max-width: 800px) {
+        .main .main__content__tasks {
+          -ms-grid-columns: 0% 100% 0%;
+              grid-template-columns: 0% 100% 0%; } }
+      .main .main__content__tasks__empty-space-right {
+        background-color: #fafafa;
+        position: relative; }
+      .main .main__content__tasks__body {
+        padding: 25px 30px;
+        border: 1px solid #a8a8a8;
+        border-top: none;
+        border-bottom: none; }
+        .main .main__content__tasks__body__title {
+          color: #333333;
+          font-weight: 700;
+          font-size: 125%;
+          display: block;
+          height: 50px;
+          cursor: default;
+          text-decoration: none; }
+          .main .main__content__tasks__body__title__name:hover {
+            text-decoration: underline;
+            cursor: pointer; }
+          .main .main__content__tasks__body__title__date {
+            font-size: 60%;
+            width: 50px;
+            font-weight: 500;
+            padding-left: 5px;
+            color: #7E7E7E; }
+        .main .main__content__tasks__body__task {
+          display: block;
+          padding: 10px;
+          cursor: pointer;
+          height: 90px;
+          position: relative;
+          z-index: 121; }
+          .main .main__content__tasks__body__task__add-button {
+            width: 100%;
+            height: 100%; }
+            .main .main__content__tasks__body__task__add-button__paragraph {
+              display: inline; }
+            .main .main__content__tasks__body__task__add-button__add-icon {
+              padding: 3px;
+              margin-top: -4px;
+              display: inline-block;
+              border-radius: 50%; }
+            .main .main__content__tasks__body__task__add-button__add-icon:hover {
+              background-color: #4B86B4; }
+          .main .main__content__tasks__body__task__insert-data {
+            display: block;
+            opacity: 0;
+            pointer-events: none;
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            left: 0;
+            top: 0%;
+            -webkit-transition-duration: 0.3s;
+                    transition-duration: 0.3s;
+            z-index: 20;
+            padding: 5px;
+            background-color: #ffffff;
+            border-radius: 4px; }
+            .main .main__content__tasks__body__task__insert-data__input {
+              width: 70%;
+              height: 35px;
+              padding: 5px;
+              display: inline-block;
+              border: 1px solid #a8a8a8;
+              border-top-left-radius: 4px;
+              border-bottom-left-radius: 4px; }
+            .main .main__content__tasks__body__task__insert-data__select-date {
+              display: inline-block;
+              width: 29%;
+              height: 35px;
+              position: absolute;
+              border: 1px solid #a8a8a8;
+              border-left: none;
+              border-top-right-radius: 4px;
+              border-bottom-right-radius: 4px;
+              cursor: pointer; }
+              .main .main__content__tasks__body__task__insert-data__select-date__overlay {
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                top: 0;
+                left: 0; }
+              .main .main__content__tasks__body__task__insert-data__select-date__date-input {
+                width: 100%;
+                height: 100%;
+                display: block;
+                border: 1px solid transparent;
+                padding-left: 5px;
+                background-color: #ffffff;
+                border-top-right-radius: 4px;
+                border-bottom-right-radius: 4px;
+                display: -webkit-box;
+                display: -ms-flexbox;
+                display: flex;
+                -webkit-box-pack: center;
+                    -ms-flex-pack: center;
+                        justify-content: center;
+                -webkit-box-align: center;
+                    -ms-flex-align: center;
+                        align-items: center;
+                -webkit-box-orient: horizontal;
+                -webkit-box-direction: normal;
+                    -ms-flex-direction: row;
+                        flex-direction: row;
+                margin: 0;
+                color: #333333;
+                cursor: pointer; }
+              .main .main__content__tasks__body__task__insert-data__select-date__pop-up {
+                position: absolute;
+                pointer-events: none;
+                width: 150%;
+                height: 500px;
+                width: 300px;
+                left: -50%;
+                background-color: #ffffff;
+                top: 200%;
+                z-index: 0;
+                border-radius: 4px;
+                -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+                        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+                border-radius: 4px;
+                opacity: 0;
+                -webkit-transition-duration: 0.3s;
+                        transition-duration: 0.3s;
+                -webkit-transition-delay: .05s;
+                        transition-delay: .05s;
+                display: -ms-grid;
+                display: grid;
+                -ms-grid-columns: 100%;
+                    grid-template-columns: 100%;
+                -ms-grid-rows: 38% 52%  10%;
+                    grid-template-rows: 38% 52%  10%;
+                border: 1px solid #a8a8a8; }
+                @media (max-width: 800px) {
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up {
+                    left: -120px; } }
+                @media (max-width: 500px) {
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up {
+                    left: -140px;
+                    width: 250px; } }
+                .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-field {
+                  padding: 5px; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-field__input {
+                    border: none;
+                    color: #333333; }
+                .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options {
+                  display: -ms-grid;
+                  display: grid;
+                  -ms-grid-columns: 100%;
+                      grid-template-columns: 100%;
+                  -ms-grid-rows: 1fr 1fr 1fr 1fr;
+                      grid-template-rows: 1fr 1fr 1fr 1fr;
+                  border-bottom: 1px solid #a8a8a8;
+                  color: #333333; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today:hover, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow:hover, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date:hover, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week:hover {
+                    background-color: #c7dae8; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week {
+                    padding: 10px 15px; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date {
+                    min-width: 25px;
+                    max-height: 25px;
+                    font-size: 70%;
+                    text-align: center;
+                    display: inline-block;
+                    padding-top: 3px; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day {
+                    min-width: 45px;
+                    max-height: 25px;
+                    text-align: center;
+                    display: inline-block;
+                    padding-top: 1px;
+                    position: absolute;
+                    left: 80%;
+                    font-size: 80%; }
+                .main .main__content__tasks__body__task__insert-data__select-date__pop-up__calendar {
+                  position: relative;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-pack: center;
+                      -ms-flex-pack: center;
+                          justify-content: center;
+                  -webkit-box-align: center;
+                      -ms-flex-align: center;
+                          align-items: center;
+                  -webkit-box-orient: vertical;
+                  -webkit-box-direction: normal;
+                      -ms-flex-direction: column;
+                          flex-direction: column; }
+                .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time {
+                  border-top: 1px solid #a8a8a8;
+                  cursor: default;
+                  display: inline;
+                  display: -webkit-box;
+                  display: -ms-flexbox;
+                  display: flex;
+                  -webkit-box-pack: center;
+                      -ms-flex-pack: center;
+                          justify-content: center;
+                  -webkit-box-align: center;
+                      -ms-flex-align: center;
+                          align-items: center;
+                  -webkit-box-orient: horizontal;
+                  -webkit-box-direction: normal;
+                      -ms-flex-direction: row;
+                          flex-direction: row;
+                  -webkit-box-pack: justify;
+                      -ms-flex-pack: justify;
+                          justify-content: space-between;
+                  position: relative; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up {
+                    position: absolute;
+                    width: 90%;
+                    height: 200%;
+                    top: -120%;
+                    left: -5%;
+                    display: block;
+                    background-color: #ffffff;
+                    border-radius: 4px;
+                    border: 1px solid #a8a8a8;
+                    -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+                            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+                    display: -webkit-box;
+                    display: -ms-flexbox;
+                    display: flex;
+                    -webkit-box-pack: center;
+                        -ms-flex-pack: center;
+                            justify-content: center;
+                    -webkit-box-align: center;
+                        -ms-flex-align: center;
+                            align-items: center;
+                    -webkit-box-orient: vertical;
+                    -webkit-box-direction: normal;
+                        -ms-flex-direction: column;
+                            flex-direction: column; }
+                    .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2 {
+                      width: 100%;
+                      height: 40%;
+                      display: block;
+                      padding: 10px;
+                      display: -webkit-box;
+                      display: -ms-flexbox;
+                      display: flex;
+                      -webkit-box-pack: center;
+                          -ms-flex-pack: center;
+                              justify-content: center;
+                      -webkit-box-align: center;
+                          -ms-flex-align: center;
+                              align-items: center;
+                      -webkit-box-orient: horizontal;
+                      -webkit-box-direction: normal;
+                          -ms-flex-direction: row;
+                              flex-direction: row;
+                      -webkit-box-pack: space-evenly;
+                          -ms-flex-pack: space-evenly;
+                              justify-content: space-evenly; }
+                      .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button {
+                        width: 50%;
+                        height: 100%;
+                        color: #333333;
+                        padding-bottom: 8px; }
+                      .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button {
+                        text-align: start;
+                        text-decoration: none;
+                        color: #4B86B4;
+                        font-weight: 700; }
+                      .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button {
+                        text-align: end;
+                        color: #4B86B4;
+                        text-decoration: none;
+                        font-weight: 500; }
+                    .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1 {
+                      width: 100%;
+                      height: 60%;
+                      display: block;
+                      padding: 10px;
+                      display: -webkit-box;
+                      display: -ms-flexbox;
+                      display: flex;
+                      -webkit-box-pack: center;
+                          -ms-flex-pack: center;
+                              justify-content: center;
+                      -webkit-box-align: center;
+                          -ms-flex-align: center;
+                              align-items: center;
+                      -webkit-box-orient: horizontal;
+                      -webkit-box-direction: normal;
+                          -ms-flex-direction: row;
+                              flex-direction: row;
+                      border-bottom: 1px solid #a8a8a8;
+                      -webkit-box-pack: space-evenly;
+                          -ms-flex-pack: space-evenly;
+                              justify-content: space-evenly; }
+                      .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input {
+                        width: 50%;
+                        height: 100%;
+                        color: #333333; }
+                      .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label {
+                        width: 30%;
+                        height: 100%;
+                        height: auto;
+                        text-align: start;
+                        display: -webkit-box;
+                        display: -ms-flexbox;
+                        display: flex;
+                        -webkit-box-pack: center;
+                            -ms-flex-pack: center;
+                                justify-content: center;
+                        -webkit-box-align: center;
+                            -ms-flex-align: center;
+                                align-items: center;
+                        -webkit-box-orient: vertical;
+                        -webkit-box-direction: normal;
+                            -ms-flex-direction: column;
+                                flex-direction: column;
+                        padding-top: 10px;
+                        -webkit-box-align: start;
+                            -ms-flex-align: start;
+                                align-items: flex-start; }
+                      .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input {
+                        width: 70%;
+                        height: auto;
+                        border-radius: 4px;
+                        border: 1px solid #a8a8a8; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__trigger {
+                    cursor: pointer;
+                    justify-self: flex-start;
+                    padding-left: 20px;
+                    color: #4B86B4;
+                    font-weight: 700;
+                    text-decoration: none; }
+                  .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__save-button {
+                    cursor: pointer;
+                    padding-right: 20px;
+                    justify-self: flex-end;
+                    color: #4B86B4;
+                    font-weight: 700;
+                    text-decoration: none;
+                    background-color: #ffffff;
+                    border: none; }
+              .main .main__content__tasks__body__task__insert-data__select-date__pop-up::before {
+                content: "";
+                border-right: 15px solid transparent;
+                border-left: 15px solid transparent;
+                border-bottom: solid 20px #4B86B4;
+                position: absolute;
+                background-color: transparent;
+                left: calc(50% - 15px);
+                top: -20px;
+                display: none; }
+            .main .main__content__tasks__body__task__insert-data__button-submit {
+              top: 50%;
+              width: 55%;
+              height: 40px;
+              position: absolute;
+              left: 5px;
+              background-color: #4B86B4;
+              color: #ffffff;
+              border-radius: 4px;
+              border: none;
+              font-weight: 500; }
+            .main .main__content__tasks__body__task__insert-data__button-submit:hover {
+              background-color: #345d7c; }
+            .main .main__content__tasks__body__task__insert-data__button-cancel {
+              top: 50%;
+              width: 29%;
+              height: 40px;
+              position: absolute;
+              left: calc(70%-5px);
+              background-color: #4B86B4;
+              color: #ffffff;
+              border-radius: 4px;
+              border: none; }
+            .main .main__content__tasks__body__task__insert-data__button-cancel:hover {
+              background-color: #345d7c; }
+            .main .main__content__tasks__body__task__insert-data__option-priority {
+              top: 50%;
+              left: 57%;
+              position: absolute;
+              background-color: #4B86B4;
+              color: #ffffff; }
+            .main .main__content__tasks__body__task__insert-data__option-priority:hover {
+              background-color: #345d7c; }
 /*# sourceMappingURL=main.css.map */

@@ -1,11 +1,11 @@
 :root{
     font-size:16px;
 }
-
-@import "./reset";
-@import './variables';
-@import './patterns';
-
+html {
+    overflow-y: scroll;
+    overflow-x: hidden; 
+}
+  
 @function weight($weight-name) {
     @return map-get($map: $font-weights, $key: $weight-name);
 } 
@@ -26,6 +26,15 @@
         @content; 
     }
 }
+@mixin small-mobile {
+    @media (max-width: $small-mobile) {
+        @content; 
+    }
+}
+@import "./reset";
+@import './variables';
+@import './patterns';
+@import './calendarize';
 
 
 body {
@@ -40,13 +49,12 @@ body {
 .header{
     display: grid;
     width: 100%;
-    grid-template-columns: 30% 40% 20%;
+    grid-template-columns: 40% 40% 20%;
     grid-template-rows: 100%;
-    height: 55px;
+    height: 45px;
     background: $accent-color;
     position: fixed;
-    z-index: 10;
-    border-bottom:$border-black;
+    z-index: 1110;
     @include mobile(){
         grid-template-columns: 0% 100% 0%;
     }
@@ -65,54 +73,79 @@ body {
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 100%;
+        @include mobile(){
+            grid-template-columns: 70% 30%; 
+        }
         &__left {
             @include flexCenter(row);
 
             &__mobile-menu-toggle {
                 @include flexCenter(column);
-
                 display: none;
                 width:0%;
+                justify-content: space-evenly;
+                margin-left:5%;
+                padding-left: 2%;
+                padding-right:15%;
+                height:60%;
+                cursor: pointer;
+                transition-duration: $transition-duration;
+                transition-timing-function: ease;
                 @include mobile() {
                     display: flex;
-                    width:20%;
+                    width:10%;
                 }
-                justify-content: space-evenly;
-                padding-left:10px;
-                padding-right:10px;
-                height:80%;
-                cursor: pointer;
                 &__line{
                     width:30px;
                     height:5px;
-                    background-color: $text-color;
+                    background-color: black;
+                    transform-origin: 0% 0%;
+                    transition-duration: $transition-duration;
+                    transition-timing-function: ease;
                 }
             }
+        
+            &__mobile-menu-toggle :nth-child(n) {
+                align-self: flex-start;
+            }
+            &__mobile-menu-toggle :nth-child(2) {
+                    transition-duration: none ;
+            }
+
             &__content{
                 border-radius: $input-border-radius;
-                border-top-left-radius: $border-radius;
-                border-bottom-right-radius: $border-radius;
+                transition-duration: $transition-duration;
+                position: relative;
+                z-index:100;
+                width: 100%;
+                margin-left: 15px;
+                cursor: pointer;
                 @include flexCenter(row);
 
                 &__icon{
-                   
+                   padding: 2px;
+                   position: absolute;
+                   left:5px;   
                 }
             &__search{
                 border-radius: $input-border-radius;
-                border-top-left-radius: $border-radius;
-                border-bottom-right-radius: $border-radius;
                 padding:3px;
-                width:98%; 
+                width:100%; 
                 background-color: $accent-color;
                 border:none;
+                margin-left:40px;
+                transition-duration: $transition-duration;
                 color:$text-color;
                 @include mobile(){
                     width: 80%;
                 }
             }
+            &__search::placeholder{
+                color:$text-color;
+            }
         }
         &__content:hover{
-            background-color: $primary-color;
+            // background-color: $primary-color;
         }
         }
         &__right{
@@ -128,6 +161,8 @@ body {
                     @include flexCenter(row);
                     cursor: pointer;
                     margin-top:12px;
+               
+                    
                 }
                 &__item__item-icon{
                 }
@@ -139,62 +174,448 @@ body {
 
 
 .main{
+    height:calc( 100% - 45px) ;
+    width:100%;
+    display: block;
+    position: absolute;
+    top:45px;
     #{&}__content {
-        height: 100%;
+        height:100%;
     &__filters{
         display: grid;
         padding-top: 2%;
         grid-template-rows: 38% 60%;
         grid-template-columns: 100%;
+        transition-timing-function: ease;
+        transition-duration: $transition-duration;
         position: fixed;
-        border-right: $border-black;
-        width:30%;
+        width:40%;
         height:100vh;
-        top:55px;
-        z-index: 0;
+        top:45px;
+        z-index: 2110;
         left:0;
         background-color: $secondary-color;
         @include mobile(){
-            left:-30%;
+            left:-100%;
+            width:100%;
         }
         &__content{
             &__items{
                 width:100%;
-                padding-left:55%;
+                padding-left:45%;
+                @include mobile(){
+                    padding-left:0;
+                }
                 list-style: none;
                 @include flexCenter(column);
+                justify-content: space-evenly;
             }
             &__items__item{
                 display: block;
-                width:100%;
-                color:$text-color;
+                width:90%;
                 padding-top:10px;
                 padding-bottom: 10px;
                 padding-left:15px;
+                margin-top:5px;
+                border-radius: $border-radius;
                 cursor: pointer;
+                border:1px solid $secondary-color;
+                &__span{
+                    padding-left:10px;
+                    position: relative;
+                    top:2px;
+                }
+                &__icon-today{
+                    display: inline-block;
+                    font-size:70%;
+                    text-align: center;
+                    padding:3px;
+                   color:$text-color;
+                }
             }
             &__items__item:hover{
-                background-color: $primary-color;
-                border:1px solid $text-color;
-                border-right: none;
+                background-color: $accent-color;
+                border: $border-black;
+                color:$primary-color;
+                // box-shadow: $shadow-card;
             }
         }
     }    
 
     &__tasks {
+        width: 100%;
+        height: 100%;
         display: grid;
-        grid-template-columns: 30% 40% 20%;
+        grid-template-columns: 40% 40% 20%;
         grid-template-rows: 100%;
 
         @include mobile(){
-        grid-template-columns: 0% 100% 20%;
+        grid-template-columns: 0% 100% 0%;
         }
 
-            &__{
-               
+            &__empty-space-right{
+               background-color: $secondary-color;
+               position: relative;
+            }
+
+            &__body{
+                padding:25px 30px;
+                border:$border-gray;
+                border-top:none;
+                border-bottom: none;
+                &__title{
+                    color:$text-color;
+                    font-weight:map-get($map: $font-weights, $key: bold);
+                    font-size:125%;
+                    display: block;
+                    height:50px;
+                    cursor: default;
+                    text-decoration: none;
+                    &__name:hover{
+                        text-decoration: underline;
+                        cursor: pointer;
+                    }
+                    &__date{
+                        font-size: 60%;
+                        width:50px;
+                        font-weight: map-get($map: $font-weights, $key: medium);
+                        padding-left:5px;
+                    
+                        color:$text-color-secondary;
+                    }
+                  
+
+                }
+                &__task{
+                    display: block;
+                    padding:10px;
+                    cursor: pointer;
+                    height:90px;
+                    position: relative;
+                    z-index: 121;
+            
+                        &__add-button{
+                        width:100%;
+                        height:100%;
+                            &__paragraph{
+                                display: inline;
+                                }
+                            &__add-icon{
+                                padding:3px;
+                                margin-top:-4px;
+                                display: inline-block;
+                                border-radius: 50%;
+                            }
+                            &__add-icon:hover{
+                                background-color: $accent-color;
+                            }
+                        }
+                    &__insert-data{
+                        display: block;
+                        opacity: 0;
+                        pointer-events: none;
+                        width:100%;
+                        height: 100%;
+                        position: absolute;
+                        left:0;
+                        top:0%;
+                        transition-duration: $transition-duration;
+                        z-index: 20;
+                        padding:5px;
+                        background-color: $primary-color;
+                        border-radius: $border-radius;
+                            &__input{
+                                width:70%;
+                                height:35px;
+                                padding: 5px;
+                                display: inline-block;
+                                border:$border-gray;
+                                border-top-left-radius:$border-radius;
+                                border-bottom-left-radius:$border-radius;
+                            }
+                            &__select-date{
+                                display: inline-block;
+                                width:29%;
+                                height:35px;
+                                position: absolute;
+                                border:$border-gray;
+                                border-left: none;
+                                border-top-right-radius:$border-radius;
+                                border-bottom-right-radius:$border-radius;
+                                cursor: pointer;
+                                &__overlay{
+                                    position: absolute;
+                                    width:100%;
+                                    height:100%;
+                                    top:0;
+                                    left:0;
+                                }
+
+
+
+                                &__date-input{
+                                    width:100%;
+                                    height: 100%;
+                                    display: block;
+                                    border:1px solid transparent;
+                                    padding-left:5px;
+                                    background-color: $primary-color;
+                                    border-top-right-radius:$border-radius;
+                                    border-bottom-right-radius:$border-radius;
+                                    @include flexCenter(row);
+                                    margin:0;
+                                    color:$text-color;
+                                    cursor: pointer;
+                                }
+
+                                    &__pop-up{
+                                        position: absolute;
+                                        pointer-events: none;
+                                        width:150%;
+                                        height:500px;
+                                        width:300px;
+                                        left:-50%;
+                                        background-color: $primary-color;
+                                        top:200%;
+                                        z-index: 0;
+                                        border-radius: $border-radius;
+                                        box-shadow: $shadow-card;
+                                        border-radius: $border-radius;
+                                        opacity: 0;
+                                        transition-duration: $transition-duration;
+                                        transition-delay: .05s;
+                                        display: grid;
+                                        grid-template-columns: 100%;
+                                        grid-template-rows: 38% 52%  10%;
+                                        border:$border-gray;
+                                        
+                                        @include mobile() {
+                                            left:-120px;
+                                        }
+                                        
+                                        @include small-mobile() {
+                                            left:-140px;
+                                            width:250px;
+                                        }
+
+
+                                            &__date-field{
+                                                padding:5px;
+                                                &__input{
+                                                    border:none;
+                                                    color:$text-color;
+                                                }
+                                            }
+
+                                            &__date-options{
+                                                display: grid;
+                                                grid-template-columns: 100%;
+                                                grid-template-rows: 1fr 1fr 1fr 1fr;
+                                                border-bottom:$border-gray;
+                                                color:$text-color;
+                                                &__option-today:hover, &__option-tomorrow:hover, &__option-no-date:hover, &__option-next-week:hover{
+                                                    background-color: $accent-color-darker-reverse;
+                                                }
+                                                &__option-today, &__option-tomorrow, &__option-no-date, &__option-next-week{
+                                                    padding: 10px 15px;
+                                                }
+                                                &__option-today{
+                                                    
+                                                    &__date{
+                                                        min-width:25px;
+                                                        max-height: 25px;
+                                                        font-size:70%;
+                                                        text-align: center;
+                                                        display: inline-block;
+                                                        padding-top:3px;
+                                                    }
+                                                    &__week-day{
+                                                        min-width:45px;
+                                                        max-height: 25px;
+                                                        text-align: center;
+                                                        display: inline-block;
+                                                        padding-top:1px;
+                                                        position: absolute;
+                                                        left:80%;
+                                                        font-size:80%;
+                                                    }
+
+                                                }
+                                            }
+                                           
+                                            &__calendar{
+                                                position: relative;
+                                                @include flexCenter(column);
+                                                
+                                            }
+                                            &__add-time{
+                                                border-top:$border-gray;
+                                                cursor: default;
+                                                display: inline;
+                                                @include flexCenter(row);
+                                                justify-content: space-between;;
+                                                position: relative;
+                                       
+                                                &__pop-up{
+                                                    position: absolute;
+                                                    width:90%;
+                                                    height:200%;
+                                                    top:-120%;
+                                                    left:-5%;
+                                                    display: block;
+                                                    background-color: $primary-color;
+                                                    border-radius: $border-radius;
+                                                    border: $border-gray;
+                                                    box-shadow: $shadow-card;
+                                                    @include flexCenter(column);
+                                                    &__section-2 {
+                                                        width:100%;
+                                                        height:40%;
+                                                        display: block;
+                                                        padding:10px;
+                                                        @include flexCenter(row);
+                                                        justify-content: space-evenly;
+                                                          &__add-button, &__cancel-button{
+                                                            width:50%;
+                                                            height: 100%;
+                                                            color:$text-color;
+                                                            padding-bottom:8px;
+                                                        }
+                                                          &__add-button{
+                                                            text-align: start;
+                                                            text-decoration: none;
+                                                            color:$accent-color;
+                                                            font-weight: map-get($map: $font-weights, $key: bold );
+                                                        }
+                                                        &__cancel-button{
+                                                            text-align: end;
+                                                            color:$accent-color;
+                                                            text-decoration: none;
+                                                            font-weight: map-get($map: $font-weights, $key: medium);
+    
+                                                        }
+                                                      }
+                                                    &__section-1{
+                                                        width:100%;
+                                                        height:60%;
+                                                        display: block;
+                                                        padding:10px;
+                                                        @include flexCenter(row);
+                                                        border-bottom: 1px solid $thirdary-color;;
+                                                        justify-content: space-evenly;
+                                                        &__label, &__input{
+                                                            width:50%;
+                                                            height: 100%;
+                                                            color:$text-color;
+                                                        }
+                                                        &__label{
+                                                            width:30%;
+                                                            height: 100%;
+                                                            height: auto;
+                                                            text-align: start;
+                                                           @include flexCenter(column);
+                                                           padding-top: 10px;
+                                                           align-items: flex-start;
+                                                        }
+                                                        &__input{
+                                                            width:70%;
+                                                            height: auto;
+                                                            border-radius: $border-radius;
+                                                            border:$border-gray
+                                                        }
+                                          
+
+                                                    }
+                                                  
+
+                                                }
+
+                                                &__trigger{
+                                                    cursor: pointer;
+                                                    justify-self: flex-start;
+                                                    padding-left: 20px;
+                                                    color:$accent-color;
+                                                    font-weight:map-get($map: $font-weights, $key: bold) ;
+                                                    text-decoration: none;
+                                                }
+                                                &__save-button {
+                                                    cursor: pointer;
+                                                    // align-self: flex-end;
+                                                    padding-right: 20px;
+                                                    justify-self: flex-end;
+                                                    color:$accent-color;
+                                                    font-weight:map-get($map: $font-weights, $key: bold) ;
+                                                    text-decoration: none;
+                                                    background-color: $primary-color;
+                                                    border: none;
+                                                }
+                                            }
+
+
+                                    } 
+                               
+                                    &__pop-up::before{
+                                        content: "";
+                                        border-right: 15px solid transparent;
+                                        border-left: 15px solid transparent;
+                                        border-bottom: solid 20px $accent-color;
+                                        position: absolute;
+                                        // width:30px;
+                                        // height:30px;
+                                        background-color: transparent;
+                                        left:calc(50% - 15px);
+                                        top:-20px;
+                                        display: none;
+                                    }
+
+                            }
+                            &__button-submit{
+                                top:50%;
+                                width:55%;
+                                height:40px;
+                                position: absolute;
+                                left:5px;
+                                background-color: $accent-color;
+                                color:$primary-color;
+                                border-radius: $border-radius;
+                                border:none;
+                                font-weight: map-get($map: $font-weights, $key: medium);
+                            }
+                            &__button-submit:hover{
+                                background-color: $accent-color-darker;
+                            }
+                            &__button-cancel {
+                                top:50%;
+                                width:29%;
+                                height:40px;
+                                position: absolute;
+                                left:calc(70%-5px);
+                                background-color: $accent-color;
+                                color:$primary-color;
+                                border-radius: $border-radius;
+                                border:none;
+                               
+                            }
+                            &__button-cancel:hover {
+                                background-color: $accent-color-darker;
+
+                            }
+                            &__option-priority{
+                                top:50%;
+                                left:57%;
+                                position: absolute;
+                                background-color: $accent-color;
+                                color:$primary-color;
+                            }
+                            &__option-priority:hover{
+                                background-color: $accent-color-darker;   
+                            }
+                        }  
+                }
             }
 
     }
 }
+
 }
 
