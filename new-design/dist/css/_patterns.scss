@@ -46,8 +46,8 @@
 .active {
     font-weight: map-get($map: $font-weights, $key: medium);
     border-radius: $border-radius;
-    background-color: $accent-color-darker-reverse;
-    border: $border-black !important;
+    background-color: $primary-color;
+    border: $border-gray !important;
     // box-shadow: $shadow-card;
 }
 .mobile-click{
@@ -70,4 +70,17 @@
     top : 50% !important;
     z-index : 0 !important; 
     pointer-events : none !important;
+}
+.borderless {
+    border:none;
+}
+.hidden { 
+    pointer-events: none;
+    opacity: 0;
+    left:100%;
+}
+.visible {
+    pointer-events: all;
+    opacity: 1;
+    left:0;
 }

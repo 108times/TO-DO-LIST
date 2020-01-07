@@ -1,4 +1,5 @@
 import { primary_color, accent_color, text_color } from './variables.js';
+import { priorityHidePopUp, priority_popup_trigger } from './choose-priority.js';
 export function addTaskHover() {
     const add_task = document.querySelector('.main__content__tasks__body__task__add-button__content');
     const add_task_icon = document.querySelector('.main__content__tasks__body__task__add-button__add-icon');
@@ -42,6 +43,7 @@ export function addTaskClick() {
 
 }
 export function cancelClick() {
+    priority_popup_trigger.click();
     const cancel = document.querySelector('.main__content__tasks__body__task__insert-data__button-cancel__overlay');
     cancel.addEventListener('click', event => {
         event.preventDefault();

@@ -35,12 +35,12 @@
             <div class="header__middle__right">
                 <ul class="header__middle__right__settings">
                     <li class="header__middle__right__settings__item">
-                        <img class="icon overlay header__middle__right__settings__item_item-icon" src="./img/add.png"
+                        <img class="icon header__middle__right__settings__item__item-icon" src="./img/add.png"
                             alt="logo">
                     </li class="header__middle__right__settings__item">
                     <li class="header__middle__right__settings__item">
-                        <img class="icon overlay header__middle__right__settings__item_item-icon"
-                            src="./img/settings.png" alt="logo">
+                        <img class="icon header__middle__right__settings__item__item-icon" src="./img/settings.png"
+                            alt="logo">
                     </li>
                 </ul>
             </div>
@@ -54,19 +54,19 @@
             <div class="main__content__filters">
                 <div class="main__content__filters__content">
                     <ul class="main__content__filters__content__items">
-                        <li class="main__content__filters__content__items__item">
+                        <li id="inbox-trigger" class="main__content__filters__content__items__item">
                             <img src="./img/inbox.png" alt="#"
                                 class="icon-small overlay main__content__filters__content__items__item__icon">
                             <span class="main__content__filters__content__items__item__span">Inbox</span>
                         </li>
-                        <li class="main__content__filters__content__items__item active">
+                        <li id="today-trigger" class=" main__content__filters__content__items__item active">
                             <div id="today-1"
                                 class="today icon-small overlay main__content__filters__content__items__item__icon-today">
                                 25
                             </div>
                             <span class="main__content__filters__content__items__item__span">Today</span>
                         </li>
-                        <li class="main__content__filters__content__items__item">
+                        <li id="next-days-trigger" class=" main__content__filters__content__items__item">
                             <img src="./img/calendar.png" alt="#"
                                 class="icon-small overlay main__content__filters__content__items__item__icon ">
                             <span class="main__content__filters__content__items__item__span">Next 7 days</span>
@@ -76,15 +76,17 @@
                 <div class="main__content__filters__empty-space"></div>
             </div>
             <div class="main__content__tasks">
+
                 <div class="main__content__tasks__empty-space-left">
 
                 </div>
-                <div class="main__content__tasks__body">
+
+                <div id="today-body" class="main__content__tasks__body  visible">
                     <a class="main__content__tasks__body__title" href="#today">
                         <span class="main__content__tasks__body__title__name">Today</span>
                         <span class="main__content__tasks__body__title__date">Wed 1 Jan</span></a>
                     <!-- PHp tasks there -->
-                    <div class="main__content__tasks__body__task">
+                    <div class="main__content__tasks__body__task ">
                         <div class="main__content__tasks__body__task__add-button">
                             <div class="main__content__tasks__body__task__add-button__content">
                                 <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
@@ -194,33 +196,449 @@
                             <div class="main__content__tasks__body__task__insert-data__option-priority__pop-up">
                                 <div
                                     class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1">
-                                    <img class="icon-small overlay" src="/img/flag-1.png" alt="">
+                                    <img class="icon-small borderless overlay" src="/img/flag-1.png" alt="">
                                     Priority 1
                                 </div>
                                 <div
                                     class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-2">
-                                    <img class="icon-small overlay" src="/img/flag-2.png" alt="">
+                                    <img class="icon-small borderless overlay" src="/img/flag-2.png" alt="">
                                     Priority 2
                                 </div>
                                 <div
                                     class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-3">
-                                    <img class="icon-small overlay" src="/img/flag-3.png" alt="">
+                                    <img class="icon-small borderless overlay" src="/img/flag-3.png" alt="">
                                     Prioirty 3
                                 </div>
                                 <div
                                     class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-4">
-                                    <img class="icon-small overlay active" src="/img/flag-4.png" alt="">
+                                    <img class="icon-small borderless overlay" src="/img/flag-4.png" alt="">
                                     Priority 4
                                 </div>
                             </div>
                         </form>
                     </div>
+
+                </div>
+                <div id="inbox-body" class="main__content__tasks__body  hidden">
+                    <span class="main__content__tasks__body__title" href="#today">
+                        <span class="main__content__tasks__body__title__name">Inbox</span>
+                        <span class="main__content__tasks__body__title__date hidden">Wed 1 Jan</span></span>
+                    <!-- PHp tasks there -->
+                    <div class="main__content__tasks__body__task">
+                        <div class="main__content__tasks__body__task__add-button">
+                            <div class="main__content__tasks__body__task__add-button__content">
+                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                    src="./img/add.png" alt="">
+                                <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
+                            </div>
+                        </div>
+                        <form method="GET" action="index.html" class="main__content__tasks__body__task__insert-data">
+                            <input type="text" class="main__content__tasks__body__task__insert-data__input" name="task"
+                                id="task" placeholder="e.g Cook something for dinner">
+                            <div class="main__content__tasks__body__task__insert-data__select-date">
+                                <input type="text" id="date-inp" placeholder="Schedule"
+                                    class="main__content__tasks__body__task__insert-data__select-date__date-input"
+                                    disabled>
+                                <div class="main__content__tasks__body__task__insert-data__select-date__overlay">
+                                </div>
+                                <div id="date-popup"
+                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up">
+
+                                    <div
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__date-options">
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today">
+
+                                            <div id="today-2"
+                                                class=" icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date">
+                                                25
+                                            </div>
+                                            <span class="options-span">Today</span>
+                                            <div id="today-weekday"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Sun
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow">
+                                            <img src="./img/sunny.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow__icon">
+                                            <span class="options-span">Tomorrow</span>
+                                            <div id="tomorrow-weekday"
+                                                class="tomorrow icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Sun
+                                            </div>
+                                        </div>
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week">
+                                            <img src="./img/calendar.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week__icon">
+                                            <span class="options-span">Next week</span>
+                                            <div
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Mon
+                                            </div>
+                                        </div>
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date">
+                                            <img src="./img/forbidden.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date__icon">
+                                            <span class="options-span">No date</span>
+                                        </div>
+                                    </div>
+                                    <div id="calendar"
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__calendar">
+                                    </div>
+                                    <div
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time">
+                                        <a class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__trigger"
+                                            href="#">+ Add time</a>
+                                        <div
+                                            class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up">
+                                            <div
+                                                class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1">
+                                                <label
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label"
+                                                    for="time">Time</label>
+                                                <input
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input"
+                                                    type="time" name="time" placeholder="12:00">
+                                            </div>
+
+                                            <div
+                                                class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2">
+                                                <a href="#"
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button">Add</button>
+                                                    <a href="#"
+                                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button">Cancel</button>
+                                            </div>
+                                        </div>
+
+                                        <a class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__save-button"
+                                            href="#">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="main__content__tasks__body__task__insert-data__button-submit type=" submit">
+                                <div class="main__content__tasks__body__task__insert-data__button-submit__overlay">
+                                </div>
+                                Add Task
+                            </button>
+                            <button class="main__content__tasks__body__task__insert-data__button-cancel">
+                                <div class="main__content__tasks__body__task__insert-data__button-cancel__overlay">
+                                </div>
+                                Cancel
+                            </button>
+                            <img src="./img/flag-4.png" alt=""
+                                class="icon-big main__content__tasks__body__task__insert-data__option-priority">
+                            <div class="main__content__tasks__body__task__insert-data__option-priority__pop-up">
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1">
+                                    <img class="icon-small borderless overlay" src="/img/flag-1.png" alt="">
+                                    Priority 1
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-2">
+                                    <img class="icon-small borderless overlay" src="/img/flag-2.png" alt="">
+                                    Priority 2
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-3">
+                                    <img class="icon-small borderless overlay" src="/img/flag-3.png" alt="">
+                                    Prioirty 3
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-4">
+                                    <img class="icon-small borderless overlay" src="/img/flag-4.png" alt="">
+                                    Priority 4
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+
+                </div>
+
+
+                <div id="next-days-body" class="main__content__tasks__body  hidden">
+                    <a class="main__content__tasks__body__title" href="#today">
+                        <span class="main__content__tasks__body__title__name">Next 7 days</span>
+                        <span class="main__content__tasks__body__title__date">Wed 1 Jan</span></a>
+                    <!-- PHp tasks there -->
+
+                    <div class="main__content__tasks__body__task today">
+                        <div class="main__content__tasks__body__task__add-button">
+
+                            <div class="main__content__tasks__body__task__add-button__content">
+                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                    src="./img/add.png" alt="">
+                                <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
+                            </div>
+
+                        </div>
+                        <form method="GET" action="index.html" class="main__content__tasks__body__task__insert-data">
+                            <input type="text" class="main__content__tasks__body__task__insert-data__input" name="task"
+                                id="task" placeholder="e.g Cook something for dinner">
+                            <div class="main__content__tasks__body__task__insert-data__select-date">
+                                <input type="text" id="date-inp" placeholder="Schedule"
+                                    class="main__content__tasks__body__task__insert-data__select-date__date-input"
+                                    disabled>
+                                <div class="main__content__tasks__body__task__insert-data__select-date__overlay">
+                                </div>
+                                <div id="date-popup"
+                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up">
+
+                                    <div
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__date-options">
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today">
+
+                                            <div id="today-2"
+                                                class=" icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date">
+                                                25
+                                            </div>
+                                            <span class="options-span">Today</span>
+                                            <div id="today-weekday"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Sun
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow">
+                                            <img src="./img/sunny.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow__icon">
+                                            <span class="options-span">Tomorrow</span>
+                                            <div id="tomorrow-weekday"
+                                                class="tomorrow icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Sun
+                                            </div>
+                                        </div>
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week">
+                                            <img src="./img/calendar.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week__icon">
+                                            <span class="options-span">Next week</span>
+                                            <div
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Mon
+                                            </div>
+                                        </div>
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date">
+                                            <img src="./img/forbidden.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date__icon">
+                                            <span class="options-span">No date</span>
+                                        </div>
+                                    </div>
+                                    <div id="calendar"
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__calendar">
+                                    </div>
+                                    <div
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time">
+                                        <a class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__trigger"
+                                            href="#">+ Add time</a>
+                                        <div
+                                            class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up">
+                                            <div
+                                                class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1">
+                                                <label
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label"
+                                                    for="time">Time</label>
+                                                <input
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input"
+                                                    type="time" name="time" placeholder="12:00">
+                                            </div>
+
+                                            <div
+                                                class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2">
+                                                <a href="#"
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button">Add</button>
+                                                    <a href="#"
+                                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button">Cancel</button>
+                                            </div>
+                                        </div>
+
+                                        <a class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__save-button"
+                                            href="#">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="main__content__tasks__body__task__insert-data__button-submit type=" submit">
+                                <div class="main__content__tasks__body__task__insert-data__button-submit__overlay">
+                                </div>
+                                Add Task
+                            </button>
+                            <button class="main__content__tasks__body__task__insert-data__button-cancel">
+                                <div class="main__content__tasks__body__task__insert-data__button-cancel__overlay">
+                                </div>
+                                Cancel
+                            </button>
+                            <img src="./img/flag-4.png" alt=""
+                                class="icon-big main__content__tasks__body__task__insert-data__option-priority">
+                            <div class="main__content__tasks__body__task__insert-data__option-priority__pop-up">
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1">
+                                    <img class="icon-small borderless overlay" src="/img/flag-1.png" alt="">
+                                    Priority 1
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-2">
+                                    <img class="icon-small borderless overlay" src="/img/flag-2.png" alt="">
+                                    Priority 2
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-3">
+                                    <img class="icon-small borderless overlay" src="/img/flag-3.png" alt="">
+                                    Prioirty 3
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-4">
+                                    <img class="icon-small borderless overlay" src="/img/flag-4.png" alt="">
+                                    Priority 4
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <div class="main__content__tasks__body__task">
+                        <div class="main__content__tasks__body__task__add-button">
+                            <div class="main__content__tasks__body__task__add-button__content">
+                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                    src="./img/add.png" alt="">
+                                <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
+                            </div>
+
+                        </div>
+                        <form method="GET" action="index.html" class="main__content__tasks__body__task__insert-data">
+                            <input type="text" class="main__content__tasks__body__task__insert-data__input" name="task"
+                                id="task" placeholder="e.g Cook something for dinner">
+                            <div class="main__content__tasks__body__task__insert-data__select-date">
+                                <input type="text" id="date-inp" placeholder="Schedule"
+                                    class="main__content__tasks__body__task__insert-data__select-date__date-input"
+                                    disabled>
+                                <div class="main__content__tasks__body__task__insert-data__select-date__overlay">
+                                </div>
+                                <div id="date-popup"
+                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up">
+
+                                    <div
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__date-options">
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today">
+
+                                            <div id="today-2"
+                                                class=" icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date">
+                                                25
+                                            </div>
+                                            <span class="options-span">Today</span>
+                                            <div id="today-weekday"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Sun
+                                            </div>
+                                        </div>
+                                        <div
+                                            class="main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow">
+                                            <img src="./img/sunny.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow__icon">
+                                            <span class="options-span">Tomorrow</span>
+                                            <div id="tomorrow-weekday"
+                                                class="tomorrow icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Sun
+                                            </div>
+                                        </div>
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week">
+                                            <img src="./img/calendar.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week__icon">
+                                            <span class="options-span">Next week</span>
+                                            <div
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__week-day">
+                                                Mon
+                                            </div>
+                                        </div>
+                                        <div
+                                            class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date">
+                                            <img src="./img/forbidden.png" alt="#"
+                                                class="icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date__icon">
+                                            <span class="options-span">No date</span>
+                                        </div>
+                                    </div>
+                                    <div id="calendar"
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__calendar">
+                                    </div>
+                                    <div
+                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time">
+                                        <a class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__trigger"
+                                            href="#">+ Add time</a>
+                                        <div
+                                            class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up">
+                                            <div
+                                                class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1">
+                                                <label
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label"
+                                                    for="time">Time</label>
+                                                <input
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input"
+                                                    type="time" name="time" placeholder="12:00">
+                                            </div>
+
+                                            <div
+                                                class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2">
+                                                <a href="#"
+                                                    class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button">Add</button>
+                                                    <a href="#"
+                                                        class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button">Cancel</button>
+                                            </div>
+                                        </div>
+
+                                        <a class="main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__save-button"
+                                            href="#">Close</a>
+                                    </div>
+                                </div>
+                            </div>
+                            <button class="main__content__tasks__body__task__insert-data__button-submit type=" submit">
+                                <div class="main__content__tasks__body__task__insert-data__button-submit__overlay">
+                                </div>
+                                Add Task
+                            </button>
+                            <button class="main__content__tasks__body__task__insert-data__button-cancel">
+                                <div class="main__content__tasks__body__task__insert-data__button-cancel__overlay">
+                                </div>
+                                Cancel
+                            </button>
+                            <img src="./img/flag-4.png" alt=""
+                                class="icon-big main__content__tasks__body__task__insert-data__option-priority">
+                            <div class="main__content__tasks__body__task__insert-data__option-priority__pop-up">
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1">
+                                    <img class="icon-small borderless overlay" src="/img/flag-1.png" alt="">
+                                    Priority 1
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-2">
+                                    <img class="icon-small borderless overlay" src="/img/flag-2.png" alt="">
+                                    Priority 2
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-3">
+                                    <img class="icon-small borderless overlay" src="/img/flag-3.png" alt="">
+                                    Prioirty 3
+                                </div>
+                                <div
+                                    class="main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-4">
+                                    <img class="icon-small borderless overlay" src="/img/flag-4.png" alt="">
+                                    Priority 4
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
                 </div>
                 <div class="main__content__tasks__empty-space-right">
 
                 </div>
             </div>
-        </div>
+
 
     </main>
 

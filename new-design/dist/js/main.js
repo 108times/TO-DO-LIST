@@ -7,6 +7,8 @@ import { setDate } from './set-date.js';
 import { filterHover } from './filter-hover.js';
 import { addTime } from './add-time.js';
 import { choosePriority } from './choose-priority.js';
+import { switchFilters } from './fliters-switch.js';
+
 (function () {
     const input = document.getElementById('date-inp');
     const container = document.getElementById('calendar');
@@ -78,7 +80,7 @@ close_button.addEventListener("click", event => {
 
 
 
-
+switchFilters();
 searchHover();
 addTaskHover();
 menuToggle();
