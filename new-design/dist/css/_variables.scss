@@ -2,13 +2,25 @@
 $document-width:100vw;
 $document-height:100vh;
 
+$text-color:#22223b;
+$text-color-secondary: #7E7E7E;
+$font-weights : (
+    "regular":400,
+    "medium":500,
+    "bold":700
+);
+$mobile: 800px;
+$small-mobile : 500px;
+
 $primary-color:#ffffff;
-$secondary-color: #fafafa;
+$secondary-color: #f8f8f8;
 $thirdary-color: #a8a8a8;
 $accent-gray-color:rgb(119, 119, 119);
-$accent-color:#4B86B4;
-$accent-color-darker:rgb(52, 93, 124);
-$accent-color-darker-reverse: lighten(rgb(52, 93, 124),50%);
+// $accent-color:#4B86B4;
+$accent-color:#22223b;
+// $accent-color-darker:rgb(52, 93, 124);
+$accent-color-darker:#3D1E6D;
+$accent-color-darker-reverse: lighten(#22223b,60%);
 $highlight-color:rgb(160, 212, 231);
 $color-transparent:rgba(255,255,255,.3);
 
@@ -18,25 +30,23 @@ $priority-3:#246FE0;
 $priority-4:#000000;
 
 $input-border-radius:4px;
-$border-radius:4px;
+$border-radius:25px;
+$border-radius-big:25px;
 // $border-black:1px solid $accent-gray-color;
 $border-gray: 1px solid $thirdary-color;
 $border-black:1px solid rgba(0,0,0,0);
 $border-accent:1px solid $accent-color;
+$border-accent-middle:2px solid $accent-color;
+$border-light: 1px solid #eeeeee;
+$border-highlight: 3px solid $accent-color;
+$border-highlight-transparent: 3px solid transparent;
+$border-highlight-light: 3px solid $primary-color;
+$border-highlight-darker: 3px solid $accent-color-darker-reverse;
 
 $transition-duration: .3s;
 
 $font-size:62,5%;
 $font-family: 'Montserrat', sans-serif;
 
-$text-color:#333333;
-$text-color-secondary: #7E7E7E;
-$font-weights : (
-    "regular":400,
-    "medium":500,
-    "bold":700
-);
-$mobile: 800px;
-$small-mobile : 500px;
 
 @import './shadows';

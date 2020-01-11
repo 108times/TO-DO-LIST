@@ -16,7 +16,8 @@
 
     <header class="header">
         <div class="header__left">
-            <a href="index.html"><img class="icon logo header__left__img" src="./img/logo.png" alt="logo"></a>
+            <a href="index.html"><img id="logo" class="icon logo header__left__img" src="./img/logo-white.png"
+                    alt="logo"></a>
         </div>
         <div class="header__middle">
             <div class="header__middle__left">
@@ -26,21 +27,24 @@
                     <i id="menu-toggle-line-3" class="header__middle__left__mobile-menu-toggle__line"></i>
                 </div>
                 <div class="header__middle__left__content">
-                    <img class="icon header__middle__left__content__icon" src="./img/search.png" alt="logo">
+                    <img class="icon-small header__middle__left__content__icon" src="./img/search-white.png" alt="logo">
                     <input placeholder="Quick search" type="text" name="search" id="search"
-                        class="header__middle__left__content__search">
+                        class="header__middle__left__content__search search-white">
                 </div>
 
             </div>
             <div class="header__middle__right">
                 <ul class="header__middle__right__settings">
                     <li class="header__middle__right__settings__item">
-                        <img class="icon header__middle__right__settings__item__item-icon" src="./img/add.png"
-                            alt="logo">
+                        <img class="icon header__middle__right__settings__item__item-icon borderless"
+                            src="./img/plus-white.png" alt="logo">
                     </li class="header__middle__right__settings__item">
                     <li class="header__middle__right__settings__item">
-                        <img class="icon header__middle__right__settings__item__item-icon" src="./img/settings.png"
-                            alt="logo">
+                        <img id="settings-trigger" class="icon header__middle__right__settings__item__item-icon"
+                            src="./img/settings-2-white.png" alt="logo">
+                        <div class="header__middle__right__settings__item__settings-pop-up hidden">
+
+                        </div>
                     </li>
                 </ul>
             </div>
@@ -61,7 +65,7 @@
                         </li>
                         <li id="today-trigger" class=" main__content__filters__content__items__item active">
                             <div id="today-1"
-                                class="today icon-small overlay main__content__filters__content__items__item__icon-today">
+                                class="today icon-small overlay date-today-icon main__content__filters__content__items__item__icon-today">
                                 25
                             </div>
                             <span class="main__content__filters__content__items__item__span">Today</span>
@@ -89,19 +93,18 @@
                     <div class="main__content__tasks__body__task ">
                         <div class="main__content__tasks__body__task__add-button">
                             <div class="main__content__tasks__body__task__add-button__content">
-                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
-                                    src="./img/add.png" alt="">
+                                <img class="icon-large main__content__tasks__body__task__add-button__add-icon"
+                                    src="./img/add-white.png" alt="">
                                 <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
                             </div>
 
                         </div>
-                        <form method="GET" action="index.html" class="main__content__tasks__body__task__insert-data">
+                        <form method="POST" action="add_task.php" class="main__content__tasks__body__task__insert-data">
                             <input type="text" class="main__content__tasks__body__task__insert-data__input" name="task"
                                 id="task" placeholder="e.g Cook something for dinner">
                             <div class="main__content__tasks__body__task__insert-data__select-date">
-                                <input type="text" id="date-inp" placeholder="Schedule"
-                                    class="main__content__tasks__body__task__insert-data__select-date__date-input"
-                                    disabled>
+                                <input name="date" type="text" id="date-inp" placeholder="Schedule"
+                                    class="main__content__tasks__body__task__insert-data__select-date__date-input">
                                 <div class="main__content__tasks__body__task__insert-data__select-date__overlay"></div>
                                 <div id="date-popup"
                                     class="main__content__tasks__body__task__insert-data__select-date__pop-up">
@@ -112,7 +115,7 @@
                                             class=" main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today">
 
                                             <div id="today-2"
-                                                class=" icon-small overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date">
+                                                class=" icon-small  date-today-icon  overlay main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date">
                                                 25
                                             </div>
                                             <span class="options-span">Today</span>
@@ -227,7 +230,7 @@
                     <div class="main__content__tasks__body__task">
                         <div class="main__content__tasks__body__task__add-button">
                             <div class="main__content__tasks__body__task__add-button__content">
-                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                <img class="icon-large main__content__tasks__body__task__add-button__add-icon"
                                     src="./img/add.png" alt="">
                                 <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
                             </div>
@@ -370,7 +373,7 @@
                         <div class="main__content__tasks__body__task__add-button">
 
                             <div class="main__content__tasks__body__task__add-button__content">
-                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                <img class="icon-large main__content__tasks__body__task__add-button__add-icon"
                                     src="./img/add.png" alt="">
                                 <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
                             </div>
@@ -503,7 +506,7 @@
                     <div class="main__content__tasks__body__task">
                         <div class="main__content__tasks__body__task__add-button">
                             <div class="main__content__tasks__body__task__add-button__content">
-                                <img class="icon-small main__content__tasks__body__task__add-button__add-icon"
+                                <img class="icon-large main__content__tasks__body__task__add-button__add-icon"
                                     src="./img/add.png" alt="">
                                 <p class="main__content__tasks__body__task__add-button__paragraph"> Add task</p>
                             </div>

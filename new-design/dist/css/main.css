@@ -11,7 +11,7 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-.icon, .icon-small, .icon-big {
+.icon, .icon-small, .icon-medium, .icon-big, .icon-large {
   width: auto;
   height: auto;
   max-height: 30px;
@@ -23,64 +23,111 @@ html {
   -webkit-box-sizing: border-box;
           box-sizing: border-box; }
 
-.icon:hover, .icon-small:hover, .icon-big:hover {
+.icon:hover, .icon-small:hover, .icon-medium:hover, .icon-big:hover, .icon-large:hover {
   background-color: rgba(255, 255, 255, 0.3); }
 
 .icon-small {
   max-height: 25px;
   max-width: 25px;
   min-width: 25px;
-  min-height: 25px; }
+  min-height: 25px;
+  border-radius: 25px; }
 
 .overlay {
-  background-color: #c7dae8;
-  border: 1px solid #a8a8a8; }
+  padding: 2px;
+  border-radius: 0; }
+
+.date-today-icon {
+  border: 2px solid #22223b;
+  border-radius: 25px;
+  font-weight: 700; }
 
 .options-span {
   margin-left: 10px; }
 
+.icon-medium {
+  max-height: 35px;
+  max-width: 35px;
+  min-width: 35px;
+  min-height: 35px;
+  background-color: #22223b; }
+
 .icon-big {
   max-height: 40px;
   max-width: 40px;
+  min-width: 40px;
+  min-height: 40px;
   padding: 10px; }
+
+.icon-large {
+  max-height: 50px;
+  max-width: 50px;
+  min-width: 50px;
+  min-height: 50px;
+  padding: 5px; }
 
 .logo {
   max-height: 30px;
+  min-width: 35px;
   max-width: 100px;
-  padding: 2px;
-  border: 1px solid #4B86B4; }
+  padding: 3px;
+  border: 1px solid transparent;
+  border-radius: 4px !important; }
 
 .logo:hover {
   background-color: rgba(255, 255, 255, 0.3);
-  border: 1px solid #333333; }
+  -webkit-transition-duration: .2s;
+          transition-duration: .2s;
+  border: 1px solid #a8a8a8; }
 
 .active {
   font-weight: 500;
-  border-radius: 4px;
-  background-color: #ffffff;
-  border: 1px solid #a8a8a8 !important; }
+  background-color: #22223b;
+  color: #ffffff;
+  border: 3px solid transparent !important; }
 
 .mobile-click {
   left: 0; }
 
+.search-white::-webkit-input-placeholder {
+  color: #ffffff; }
+
+.search-white:-ms-input-placeholder {
+  color: #ffffff; }
+
+.search-white::-ms-input-placeholder {
+  color: #ffffff; }
+
+.search-white::placeholder {
+  color: #ffffff; }
+
+.search-black::-webkit-input-placeholder {
+  color: #22223b; }
+
+.search-black:-ms-input-placeholder {
+  color: #22223b; }
+
+.search-black::-ms-input-placeholder {
+  color: #22223b; }
+
+.search-black::placeholder {
+  color: #22223b; }
+
 .add-task-close {
   opacity: 0 !important;
-  top: 50% !important;
   z-index: 0 !important;
   pointer-events: none !important; }
 
 .borderless {
-  border: none; }
+  border: none !important; }
 
 .hidden {
   pointer-events: none;
-  opacity: 0;
-  left: 100%; }
+  opacity: 0; }
 
 .visible {
   pointer-events: all;
-  opacity: 1;
-  left: 0; }
+  opacity: 1; }
 
 the-datepicker__container .the-datepicker__main {
   border-top-left-radius: 0; }
@@ -99,7 +146,7 @@ the-datepicker__container .the-datepicker__main {
   border-bottom-right-radius: 0; }
 
 .the-datepicker__main {
-  background-color: #ffffff;
+  background-color: #b9b9d6;
   border-radius: 0.3em;
   padding: 0.4em;
   line-height: .5em;
@@ -119,9 +166,8 @@ the-datepicker__container .the-datepicker__main {
   max-width: 2.1em;
   padding: 0.4em 0;
   text-align: center;
-  font-weight: normal;
   text-transform: uppercase;
-  color: #666;
+  color: #22223b;
   font-size: 0.85em; }
 
 .the-datepicker__main a.the-datepicker__button {
@@ -132,11 +178,11 @@ the-datepicker__container .the-datepicker__main {
   padding: 0.4em 0;
   text-decoration: none;
   text-align: center;
-  color: #007eff;
+  color: #22223b;
   border-radius: 0.3em; }
 
 .the-datepicker__main a.the-datepicker__button:hover {
-  background-color: #d1e8ff;
+  background-color: #fff;
   text-decoration: none; }
 
 .the-datepicker__main .the-datepicker__title {
@@ -191,8 +237,11 @@ the-datepicker__container .the-datepicker__main {
 .the-datepicker__main select.the-datepicker__select {
   font-size: 0.9em;
   margin: 0;
-  padding: 0;
-  border-radius: 4px; }
+  padding-top: 3px;
+  padding-bottom: 3px;
+  border-radius: 4px;
+  background-color: #b9b9d6;
+  border: 1px solid #22223b; }
 
 .the-datepicker__main table.the-datepicker__calendar {
   display: table;
@@ -229,16 +278,16 @@ the-datepicker__container .the-datepicker__main {
   background-color: transparent; }
 
 .the-datepicker__main td.the-datepicker__day a.the-datepicker__button:hover .the-datepicker__day-content {
-  background-color: #d1e8ff; }
+  background-color: #fff; }
 
 .the-datepicker__main td.the-datepicker__day--highlighted a.the-datepicker__button .the-datepicker__day-content {
-  background-color: #d1e8ff; }
+  background-color: #fff; }
 
 .the-datepicker__main td.the-datepicker__day--outside a.the-datepicker__button {
-  color: #333333; }
+  color: #22223b; }
 
 .the-datepicker__main td.the-datepicker__day--unavailable a.the-datepicker__button {
-  color: #aaa; }
+  color: #22223b; }
 
 .the-datepicker__main td.the-datepicker__day--unavailable a.the-datepicker__button:hover .the-datepicker__day-content {
   background-color: transparent; }
@@ -249,11 +298,11 @@ the-datepicker__container .the-datepicker__main {
 
 .the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button .the-datepicker__day-content,
 .the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button .the-datepicker__day-content {
-  background-color: #007eff; }
+  background-color: #22223b; }
 
 .the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button:hover .the-datepicker__day-content,
 .the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button:hover .the-datepicker__day-content {
-  background-color: #007eff; }
+  background-color: #22223b; }
 
 .the-datepicker__main .the-datepicker__day--weekend,
 .the-datepicker__main .the-datepicker__week-day--weekend,
@@ -262,7 +311,7 @@ the-datepicker__container .the-datepicker__main {
 
 .the-datepicker__deselect-button {
   text-decoration: none;
-  color: #007eff;
+  color: #ffffff;
   font-weight: bold; }
 
 .the-datepicker__deselect-button:hover {
@@ -270,7 +319,7 @@ the-datepicker__container .the-datepicker__main {
 
 body {
   background: #ffffff;
-  color: #333333;
+  color: #22223b;
   width: 100vw;
   height: 100vh;
   font-size: 62, 5%;
@@ -280,21 +329,24 @@ body {
   display: -ms-grid;
   display: grid;
   width: 100%;
-  -ms-grid-columns: 40% 40% 20%;
-      grid-template-columns: 40% 40% 20%;
+  -ms-grid-columns: 35% 40% 25%;
+      grid-template-columns: 35% 40% 25%;
   -ms-grid-rows: 100%;
       grid-template-rows: 100%;
   height: 45px;
-  background: #4B86B4;
+  background: #22223b;
   position: fixed;
-  z-index: 1110; }
+  z-index: 1110;
+  border-top: 2px solid #22223b;
+  border-bottom: 2px solid #22223b; }
   @media (max-width: 800px) {
     .header {
       -ms-grid-columns: 0% 100% 0%;
           grid-template-columns: 0% 100% 0%; } }
   .header .header__left {
-    padding-left: 50%;
-    padding-top: 7px; }
+    padding-left: 48%;
+    padding-top: 7px;
+    height: 100%; }
     @media (max-width: 800px) {
       .header .header__left__img {
         display: none; } }
@@ -360,7 +412,7 @@ body {
         .header .header__middle__left__mobile-menu-toggle__line {
           width: 30px;
           height: 5px;
-          background-color: black;
+          background-color: #ffffff;
           -webkit-transform-origin: 0% 0%;
                   transform-origin: 0% 0%;
           -webkit-transition-duration: 0.3s;
@@ -374,13 +426,14 @@ body {
         -webkit-transition-duration: none;
                 transition-duration: none; }
       .header .header__middle__left__content {
-        border-radius: 4px;
         -webkit-transition-duration: 0.3s;
                 transition-duration: 0.3s;
         position: relative;
         z-index: 100;
+        background-color: #22223b;
         width: 100%;
-        margin-left: 15px;
+        height: 100%;
+        margin-left: 0;
         cursor: pointer;
         display: -webkit-box;
         display: -ms-flexbox;
@@ -400,26 +453,18 @@ body {
           position: absolute;
           left: 5px; }
         .header .header__middle__left__content__search {
-          border-radius: 4px;
           padding: 3px;
           width: 100%;
-          background-color: #4B86B4;
+          background-color: #22223b;
           border: none;
+          height: 100%;
           margin-left: 40px;
           -webkit-transition-duration: 0.3s;
                   transition-duration: 0.3s;
-          color: #333333; }
+          color: #ffffff; }
           @media (max-width: 800px) {
             .header .header__middle__left__content__search {
               width: 80%; } }
-        .header .header__middle__left__content__search::-webkit-input-placeholder {
-          color: #333333; }
-        .header .header__middle__left__content__search:-ms-input-placeholder {
-          color: #333333; }
-        .header .header__middle__left__content__search::-ms-input-placeholder {
-          color: #333333; }
-        .header .header__middle__left__content__search::placeholder {
-          color: #333333; }
     .header .header__middle__right {
       width: 60%;
       justify-self: flex-end;
@@ -440,6 +485,7 @@ body {
         list-style-type: none;
         width: 100%;
         padding-right: 10px;
+        position: relative;
         display: -webkit-box;
         display: -ms-flexbox;
         display: flex;
@@ -474,7 +520,17 @@ body {
           cursor: pointer;
           margin-top: 12px; }
           .header .header__middle__right__settings__item__item-icon {
-            background-color: none; }
+            border-radius: 0;
+            padding: 5px; }
+          .header .header__middle__right__settings__item__settings-pop-up {
+            position: absolute;
+            width: 100%;
+            height: 200px;
+            background-color: #b9b9d6;
+            border: 3px solid #22223b;
+            top: 100%;
+            z-index: 500;
+            cursor: default; }
 
 .main {
   height: calc( 100% - 45px);
@@ -497,12 +553,12 @@ body {
       -webkit-transition-duration: 0.3s;
               transition-duration: 0.3s;
       position: fixed;
-      width: 40%;
+      width: 35%;
       height: 100vh;
       top: 45px;
       z-index: 2110;
       left: 0;
-      background-color: #fafafa; }
+      background-color: #f8f8f8; }
       @media (max-width: 800px) {
         .main .main__content__filters {
           left: -100%;
@@ -537,9 +593,8 @@ body {
         padding-bottom: 10px;
         padding-left: 15px;
         margin-top: 5px;
-        border-radius: 4px;
         cursor: pointer;
-        border: 1px solid #fafafa; }
+        border: 3px solid transparent; }
         .main .main__content__filters__content__items__item__span {
           padding-left: 10px;
           position: relative;
@@ -549,7 +604,8 @@ body {
           font-size: 70%;
           text-align: center;
           padding: 3px;
-          color: #333333; }
+          color: #ffffff;
+          border-color: #ffffff; }
       .main .main__content__filters__content__items__item:hover {
         -webkit-transition-duration: .2s;
                 transition-duration: .2s;
@@ -566,23 +622,31 @@ body {
           -ms-grid-columns: 0% 100% 0%;
               grid-template-columns: 0% 100% 0%; } }
       .main .main__content__tasks__empty-space-right {
-        background-color: #fafafa;
+        background-color: #f8f8f8;
         position: fixed;
-        width: 20%;
+        width: 25%;
         height: 100%;
         display: block;
-        left: 80%;
+        left: 75%;
         top: 0; }
+        @media (max-width: 800px) {
+          .main .main__content__tasks__empty-space-right {
+            width: 0%; } }
       .main .main__content__tasks__body {
         padding: 25px 30px;
-        border: 1px solid #a8a8a8;
+        border: 1px solid #eeeeee;
         border-top: none;
         border-bottom: none;
         position: absolute;
         width: 40%;
-        left: 40%;
-        height: 100%;
+        left: 35%;
+        height: 200%;
         display: block; }
+        @media (max-width: 800px) {
+          .main .main__content__tasks__body {
+            width: 100%;
+            left: 0;
+            padding: 15px; } }
         .main .main__content__tasks__body .today-body {
           width: 100%;
           height: 100%;
@@ -605,7 +669,7 @@ body {
           top: 0;
           left: 0; }
         .main .main__content__tasks__body__title {
-          color: #333333;
+          color: #22223b;
           font-weight: 700;
           font-size: 125%;
           display: block;
@@ -624,56 +688,69 @@ body {
         .main .main__content__tasks__body__task {
           display: block;
           padding: 10px;
-          height: 90px;
+          height: 140px;
           position: relative;
-          z-index: 121; }
+          z-index: 121;
+          border: 3px solid #22223b;
+          background-color: #22223b;
+          color: #ffffff; }
           .main .main__content__tasks__body__task__add-button {
             width: 100%;
             height: 100%; }
             .main .main__content__tasks__body__task__add-button__content {
-              cursor: pointer; }
+              cursor: pointer;
+              padding: 10px; }
             .main .main__content__tasks__body__task__add-button__paragraph {
-              display: inline;
-              padding-left: 15px; }
+              display: inline-block;
+              padding-left: 10px;
+              font-size: 120%;
+              font-weight: 500; }
+            .main .main__content__tasks__body__task__add-button__paragraph::after {
+              content: '';
+              position: absolute;
+              display: block;
+              width: 85px;
+              height: 3px;
+              background-color: #22223b; }
             .main .main__content__tasks__body__task__add-button__add-icon {
-              padding: 5px;
+              padding: 10px;
               margin-top: -4px;
               display: inline-block;
-              border-radius: 50%; }
+              -webkit-transition-duration: .2s;
+                      transition-duration: .2s; }
             .main .main__content__tasks__body__task__add-button__add-icon:hover {
-              background-color: #4B86B4; }
+              background: none; }
           .main .main__content__tasks__body__task__insert-data {
             display: block;
             opacity: 0;
             pointer-events: none;
-            width: 100%;
+            width: 99%;
             height: 100%;
             position: absolute;
-            left: 0;
-            top: 50%;
+            left: 1px;
+            top: 0;
             -webkit-transition-duration: 0.3s;
                     transition-duration: 0.3s;
-            z-index: 20;
-            padding: 5px;
-            background-color: #ffffff;
-            border-radius: 4px; }
+            z-index: 120;
+            padding: 20px;
+            background-color: #22223b; }
             .main .main__content__tasks__body__task__insert-data__input {
-              width: 70%;
-              height: 35px;
+              width: 60%;
+              height: 40px;
               padding: 5px;
+              padding-left: 15px;
               display: inline-block;
-              border: 1px solid #a8a8a8;
-              border-top-left-radius: 4px;
-              border-bottom-left-radius: 4px; }
+              border: 3px solid #ffffff;
+              border-radius: 25px;
+              background-color: #ffffff; }
             .main .main__content__tasks__body__task__insert-data__select-date {
               display: inline-block;
               width: 29%;
-              height: 35px;
+              margin-left: 20px;
+              height: 40px;
               position: absolute;
-              border: 1px solid #a8a8a8;
               border-left: none;
-              border-top-right-radius: 4px;
-              border-bottom-right-radius: 4px;
+              border-radius: 25px;
               cursor: pointer; }
               .main .main__content__tasks__body__task__insert-data__select-date__overlay {
                 position: absolute;
@@ -685,11 +762,10 @@ body {
                 width: 100%;
                 height: 100%;
                 display: block;
-                border: 1px solid transparent;
-                padding-left: 5px;
+                border: none;
+                padding-left: 15px;
                 background-color: #ffffff;
-                border-top-right-radius: 4px;
-                border-bottom-right-radius: 4px;
+                border-radius: 25px;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
@@ -704,7 +780,7 @@ body {
                     -ms-flex-direction: row;
                         flex-direction: row;
                 margin: 0;
-                color: #333333;
+                color: #22223b;
                 cursor: pointer; }
               .main .main__content__tasks__body__task__insert-data__select-date__pop-up {
                 position: absolute;
@@ -713,13 +789,13 @@ body {
                 height: 500px;
                 width: 300px;
                 left: -50%;
-                background-color: #ffffff;
+                background-color: #b9b9d6;
                 top: 200%;
-                z-index: 0;
-                border-radius: 4px;
+                z-index: 1200;
+                border-radius: 0;
+                border: 3px solid #22223b;
                 -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
                         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
-                border-radius: 4px;
                 opacity: 0;
                 -webkit-transition-duration: 0.3s;
                         transition-duration: 0.3s;
@@ -730,8 +806,7 @@ body {
                 -ms-grid-columns: 100%;
                     grid-template-columns: 100%;
                 -ms-grid-rows: 38% 52%  10%;
-                    grid-template-rows: 38% 52%  10%;
-                border: 1px solid #a8a8a8; }
+                    grid-template-rows: 38% 52%  10%; }
                 @media (max-width: 800px) {
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up {
                     left: -120px; } }
@@ -743,7 +818,7 @@ body {
                   padding: 5px; }
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-field__input {
                     border: none;
-                    color: #333333; }
+                    color: #22223b; }
                 .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options {
                   display: -ms-grid;
                   display: grid;
@@ -751,12 +826,14 @@ body {
                       grid-template-columns: 100%;
                   -ms-grid-rows: 1fr 1fr 1fr 1fr;
                       grid-template-rows: 1fr 1fr 1fr 1fr;
-                  border-bottom: 1px solid #a8a8a8;
-                  color: #333333; }
+                  border-bottom: 3px solid #22223b;
+                  color: #22223b; }
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today:hover, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow:hover, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date:hover, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week:hover {
-                    background-color: #c7dae8; }
+                    background-color: #ffffff;
+                    border: 1px solid #22223b; }
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-tomorrow, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-no-date, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-next-week {
-                    padding: 10px 15px; }
+                    padding: 8px 15px;
+                    border: 1px solid transparent; }
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up__date-options__option-today__date {
                     min-width: 25px;
                     max-height: 25px;
@@ -787,9 +864,10 @@ body {
                   -webkit-box-orient: vertical;
                   -webkit-box-direction: normal;
                       -ms-flex-direction: column;
-                          flex-direction: column; }
+                          flex-direction: column;
+                  overflow: hidden; }
                 .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time {
-                  border-top: 1px solid #a8a8a8;
+                  border-top: 3px solid #22223b;
                   cursor: default;
                   display: inline;
                   display: -webkit-box;
@@ -820,9 +898,9 @@ body {
                     display: block;
                     opacity: 0;
                     pointer-events: none;
-                    background-color: #ffffff;
-                    border-radius: 4px;
-                    border: 1px solid #a8a8a8;
+                    background-color: #b9b9d6;
+                    border-radius: 0;
+                    border: 3px solid #22223b;
                     -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
                             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
                     display: -webkit-box;
@@ -862,18 +940,18 @@ body {
                       .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button {
                         width: 50%;
                         height: 100%;
-                        color: #333333;
+                        color: #22223b;
                         padding-bottom: 8px; }
                       .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__add-button {
                         text-align: start;
                         text-decoration: none;
-                        color: #4B86B4;
+                        color: #22223b;
                         font-weight: 700; }
                       .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-2__cancel-button {
                         text-align: end;
-                        color: #4B86B4;
+                        color: #22223b;
                         text-decoration: none;
-                        font-weight: 500; }
+                        font-weight: 700; }
                     .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1 {
                       width: 100%;
                       height: 60%;
@@ -892,14 +970,14 @@ body {
                       -webkit-box-direction: normal;
                           -ms-flex-direction: row;
                               flex-direction: row;
-                      border-bottom: 1px solid #a8a8a8;
+                      border-bottom: 1px solid #22223b;
                       -webkit-box-pack: space-evenly;
                           -ms-flex-pack: space-evenly;
                               justify-content: space-evenly; }
                       .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label, .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input {
                         width: 50%;
                         height: 100%;
-                        color: #333333; }
+                        color: #22223b; }
                       .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__label {
                         width: 30%;
                         height: 100%;
@@ -925,98 +1003,112 @@ body {
                       .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__pop-up__section-1__input {
                         width: 70%;
                         height: auto;
-                        border-radius: 4px;
-                        border: 1px solid #a8a8a8; }
+                        border-radius: 25px;
+                        border: 3px solid #22223b;
+                        padding-left: 15px; }
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__trigger {
                     cursor: pointer;
                     justify-self: flex-start;
                     padding-left: 20px;
-                    color: #4B86B4;
+                    color: #22223b;
                     font-weight: 700;
                     text-decoration: none;
-                    width: 50%; }
+                    width: 100%; }
                   .main .main__content__tasks__body__task__insert-data__select-date__pop-up__add-time__save-button {
                     cursor: pointer;
                     padding-right: 20px;
                     justify-self: flex-end;
-                    color: #4B86B4;
+                    color: #22223b;
                     font-weight: 700;
                     text-decoration: none;
-                    background-color: #ffffff;
                     border: none; }
               .main .main__content__tasks__body__task__insert-data__select-date__pop-up::before {
                 content: "";
                 border-right: 15px solid transparent;
                 border-left: 15px solid transparent;
-                border-bottom: solid 20px #4B86B4;
+                border-bottom: solid 20px #22223b;
                 position: absolute;
                 background-color: transparent;
                 left: calc(50% - 15px);
                 top: -20px;
                 display: none; }
             .main .main__content__tasks__body__task__insert-data__button-submit {
-              top: 50%;
-              width: calc(59% - 3px);
+              top: 55%;
+              width: 40%;
               height: 40px;
               position: absolute;
-              left: 5px;
-              background-color: #4B86B4;
-              color: #ffffff;
-              border-radius: 4px;
-              border: 1px solid #a8a8a8;
+              left: 20px;
+              background-color: #b9b9d6;
+              color: #22223b;
+              border-radius: 25px;
+              border: none;
               font-weight: 500; }
               @media (max-width: 800px) {
                 .main .main__content__tasks__body__task__insert-data__button-submit {
-                  width: 50%; } }
+                  width: 35%; } }
               .main .main__content__tasks__body__task__insert-data__button-submit__overlay {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0; }
             .main .main__content__tasks__body__task__insert-data__button-submit:hover {
+              -webkit-transition-duration: 0.3s;
+                      transition-duration: 0.3s;
               -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
-                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123); }
+                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+              top: 53%; }
             .main .main__content__tasks__body__task__insert-data__button-cancel {
-              top: 50%;
+              top: 55%;
               width: 29%;
               height: 40px;
               position: absolute;
-              left: calc(70%-5px);
-              background-color: #c7dae8;
-              color: #333333;
-              border-radius: 4px;
-              border: 1px solid #a8a8a8; }
+              left: 63%;
+              background-color: #b9b9d6;
+              color: #22223b;
+              border-radius: 25px;
+              border: none;
+              font-weight: 500; }
               .main .main__content__tasks__body__task__insert-data__button-cancel__overlay {
                 width: 100%;
                 height: 100%;
                 position: absolute;
                 top: 0; }
             .main .main__content__tasks__body__task__insert-data__button-cancel:hover {
+              -webkit-transition-duration: 0.3s;
+                      transition-duration: 0.3s;
               -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
-                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123); }
+                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+              top: 53%; }
             .main .main__content__tasks__body__task__insert-data__option-priority {
-              top: 50%;
-              left: 61%;
+              top: 55%;
+              left: calc(45% + 10px);
               cursor: pointer;
               position: absolute;
-              background-color: #c7dae8;
-              color: #ffffff;
-              border: 1px solid #a8a8a8; }
+              background-color: #b9b9d6;
+              border-radius: 25px;
+              border: none; }
               @media (max-width: 800px) {
                 .main .main__content__tasks__body__task__insert-data__option-priority {
-                  left: 55%; } }
+                  left: calc(40% + 10px); } }
               .main .main__content__tasks__body__task__insert-data__option-priority__pop-up {
                 position: absolute;
                 width: 50%;
                 left: 37%;
                 height: 150%;
-                background-color: #ffffff;
-                border-radius: 4px;
+                background-color: #b9b9d6;
+                border-radius: 0;
                 -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
                         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
-                top: 100%;
+                margin-top: 5px;
+                top: 120%;
+                border: 3px solid #22223b;
                 opacity: 0;
+                color: #22223b;
+                overflow: hidden;
+                z-index: 123;
                 pointer-events: none;
+                -webkit-transition-duration: .3s;
+                        transition-duration: .3s;
                 display: -webkit-box;
                 display: -ms-flexbox;
                 display: flex;
@@ -1034,11 +1126,20 @@ body {
                   width: 100%;
                   height: 25%;
                   display: block;
-                  padding: 3px; }
+                  padding: 10px; }
                 .main .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-1:hover, .main .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-2:hover, .main .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-3:hover, .main .main__content__tasks__body__task__insert-data__option-priority__pop-up__option-priority-4:hover {
-                  background-color: #c7dae8;
+                  background-color: #22223b;
+                  color: #ffffff;
                   cursor: pointer; }
             .main .main__content__tasks__body__task__insert-data__option-priority:hover {
+              -webkit-transition-duration: 0.3s;
+                      transition-duration: 0.3s;
               -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
-                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123); }
+                      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.205), 0 2px 4px rgba(0, 0, 0, 0.226), -2px 0 4px rgba(0, 0, 0, 0.123);
+              top: 53%; }
+        .main .main__content__tasks__body__task:hover {
+          -webkit-transition-duration: .5s;
+                  transition-duration: .5s;
+          -webkit-box-shadow: 0 5px 15px rgba(0, 0, 0, 0.287), 0 6px 10px rgba(0, 0, 0, 0.322), -2px 0 4px rgba(0, 0, 0, 0.123);
+                  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.287), 0 6px 10px rgba(0, 0, 0, 0.322), -2px 0 4px rgba(0, 0, 0, 0.123); }
 /*# sourceMappingURL=main.css.map */

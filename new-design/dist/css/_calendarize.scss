@@ -15,7 +15,7 @@ the-datepicker__container .the-datepicker__main {
     border-bottom-right-radius: 0;
   }
   .the-datepicker__main {
-    background-color: $primary-color;
+    background-color: $accent-color-darker-reverse;
     border-radius: 0.3em;
     padding: 0.4em;
     line-height: .5em;
@@ -34,9 +34,9 @@ the-datepicker__container .the-datepicker__main {
     max-width: 2.1em;
     padding: 0.4em 0;
     text-align: center;
-    font-weight: normal;
+    font-weight: map-get($map: $font-weights, $key: mdium);
     text-transform: uppercase;
-    color: #666;
+    color: $text-color;
     font-size: 0.85em;
   }
   .the-datepicker__main a.the-datepicker__button {
@@ -47,11 +47,11 @@ the-datepicker__container .the-datepicker__main {
     padding: 0.4em 0;
     text-decoration: none;
     text-align: center;
-    color: #007eff;
+    color: $accent-color;
     border-radius: 0.3em;
   }
   .the-datepicker__main a.the-datepicker__button:hover {
-    background-color: #d1e8ff;
+    background-color: #fff;
     text-decoration: none;
   }
   .the-datepicker__main .the-datepicker__title {
@@ -106,8 +106,11 @@ the-datepicker__container .the-datepicker__main {
   .the-datepicker__main select.the-datepicker__select {
     font-size: 0.9em;
     margin: 0;
-    padding: 0;
-    border-radius: $border-radius;
+    padding-top: 3px;
+    padding-bottom: 3px;
+    border-radius: $input-border-radius;
+    background-color: $accent-color-darker-reverse;
+    border:$border-accent;
   }
   .the-datepicker__main table.the-datepicker__calendar {
     display: table;
@@ -144,16 +147,16 @@ the-datepicker__container .the-datepicker__main {
     background-color: transparent;
   }
   .the-datepicker__main td.the-datepicker__day a.the-datepicker__button:hover .the-datepicker__day-content {
-    background-color: #d1e8ff;
+    background-color: #fff;
   }
   .the-datepicker__main td.the-datepicker__day--highlighted a.the-datepicker__button .the-datepicker__day-content {
-    background-color: #d1e8ff;
+    background-color: #fff;
   }
   .the-datepicker__main td.the-datepicker__day--outside a.the-datepicker__button {
     color: $text-color;
   }
   .the-datepicker__main td.the-datepicker__day--unavailable a.the-datepicker__button {
-    color: #aaa;
+    color: $accent-color;
   }
   .the-datepicker__main td.the-datepicker__day--unavailable a.the-datepicker__button:hover .the-datepicker__day-content {
     background-color: transparent;
@@ -164,11 +167,11 @@ the-datepicker__container .the-datepicker__main {
   }
   .the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button .the-datepicker__day-content,
   .the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button .the-datepicker__day-content {
-    background-color: #007eff;
+    background-color: $accent-color;
   }
   .the-datepicker__main td.the-datepicker__day--selected a.the-datepicker__button:hover .the-datepicker__day-content,
   .the-datepicker__main td.the-datepicker__day--selected.the-datepicker__day--highlighted a.the-datepicker__button:hover .the-datepicker__day-content {
-    background-color: #007eff;
+    background-color: $accent-color;
   }
   .the-datepicker__main .the-datepicker__day--weekend,
   .the-datepicker__main .the-datepicker__week-day--weekend,
@@ -177,7 +180,7 @@ the-datepicker__container .the-datepicker__main {
   }
   .the-datepicker__deselect-button {
     text-decoration: none;
-    color: #007eff;
+    color: $primary-color;
     font-weight: bold;
   }
   .the-datepicker__deselect-button:hover {

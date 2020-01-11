@@ -14,7 +14,7 @@ export function popUpClick() {
         //     'opacity = 1; top = "100%"; z-index = 50}');
 
         popup.style.opacity = 1;
-        popup.style.top = "100%";
+        popup.style.top = "80%";
         popup.style['z-index'] = 50;
         popup.style['pointer-events'] = "all";
 

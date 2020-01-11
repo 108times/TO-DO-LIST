@@ -49,27 +49,36 @@ body {
 .header{
     display: grid;
     width: 100%;
-    grid-template-columns: 40% 40% 20%;
+    grid-template-columns: 35% 40% 25%;
     grid-template-rows: 100%;
     height: 45px;
     background: $accent-color;
     position: fixed;
     z-index: 1110;
+    border-top: $border-accent-middle;
+    border-bottom: $border-accent-middle;
+    // border-bottom: $border-accent;
     @include mobile(){
         grid-template-columns: 0% 100% 0%;
     }
 
-
+    #{&}__right{
+      
+    }
     #{&}__left {
-        padding-left: 50%;
+        padding-left: 48%;
         padding-top:7px;
+        height: 100%;
         @include mobile(){
            &__img {
-               display: none;
+            display: none;
+             
            }
         }
     }
     #{&}__middle{
+        // border-left:1px solid $primary-color;
+        // border-right:1px solid $primary-color;
         display: grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 100%;
@@ -98,7 +107,7 @@ body {
                 &__line{
                     width:30px;
                     height:5px;
-                    background-color: black;
+                    background-color: $primary-color;
                     transform-origin: 0% 0%;
                     transition-duration: $transition-duration;
                     transition-timing-function: ease;
@@ -113,12 +122,14 @@ body {
             }
 
             &__content{
-                border-radius: $input-border-radius;
+                // border-radius: $border-radius;
                 transition-duration: $transition-duration;
                 position: relative;
                 z-index:100;
+                background-color: $accent-color;
                 width: 100%;
-                margin-left: 15px;
+                height: 100%;
+                margin-left: 0;
                 cursor: pointer;
                 @include flexCenter(row);
 
@@ -128,21 +139,23 @@ body {
                    left:5px;   
                 }
             &__search{
-                border-radius: $input-border-radius;
+                // border-radius: $border-radius;
                 padding:3px;
                 width:100%; 
                 background-color: $accent-color;
                 border:none;
+                height: 100%;
                 margin-left:40px;
                 transition-duration: $transition-duration;
-                color:$text-color;
+                color:$primary-color;
                 @include mobile(){
                     width: 80%;
                 }
             }
-            &__search::placeholder{
-                color:$text-color;
-            }
+            // &__search::placeholder{
+             
+            // }
+            
         }
         &__content:hover{
             // background-color: $primary-color;
@@ -151,12 +164,15 @@ body {
         &__right{
             width:60%;
             justify-self: flex-end;
+        
             @include flexCenter(row);
+            
 
             &__settings{
                 list-style-type: none;
                 width:100%;
                 padding-right: 10px;
+                position: relative;
                 @include flexCenter(row);
                 justify-content: flex-end;
                 &__item{
@@ -165,9 +181,20 @@ body {
                     cursor: pointer;
                     margin-top:12px;
                     &__item-icon{
-                        background-color: none;
+                        // background-color: $accent-color;
+                        border-radius: 0;
+                        padding: 5px;
                     }
-                    
+                    &__settings-pop-up{
+                        position: absolute;
+                        width:100%;
+                        height:200px;
+                        background-color: $accent-color-darker-reverse;
+                        border:$border-highlight;
+                        top:100%;
+                        z-index: 500;
+                        cursor: default;
+                    }
                 }
                 
             }
@@ -193,7 +220,7 @@ body {
         transition-timing-function: ease;
         transition-duration: $transition-duration;
         position: fixed;
-        width:40%;
+        width:35%;
         height:100vh;
         top:45px;
         z-index: 2110;
@@ -221,9 +248,9 @@ body {
                 padding-bottom: 10px;
                 padding-left:15px;
                 margin-top:5px;
-                border-radius: $border-radius;
+                // border-radius: $border-radius;
                 cursor: pointer;
-                border:1px solid $secondary-color;
+                border:3px solid transparent;
                 &__span{
                     padding-left:10px;
                     position: relative;
@@ -234,7 +261,8 @@ body {
                     font-size:70%;
                     text-align: center;
                     padding:3px;
-                   color:$text-color;
+                   color:$primary-color;
+                   border-color: $primary-color;
                 }
             }
             &__items__item:hover{
@@ -259,23 +287,33 @@ body {
             &__empty-space-right{
                background-color: $secondary-color;
                position: fixed;
-               width:20%;
+               width:25%;
                height:100%;
                display: block;
-               left:80%;
+               left:75%;
                top:0;
+               @include mobile() {
+                   width:0%;
+               }
             }
 
             &__body{
                 padding:25px 30px;
-                border:$border-gray;
+                border:$border-light;
                 border-top:none;
                 border-bottom: none;
                 position: absolute;
                 width: 40%;
-                left:40%;
-                height: 100%;
+                left:35%;
+                height: 200%;
                 display: block;
+
+                @include mobile(){
+                    width:100%;
+                    left:0;
+                    padding:15px;
+                }
+
                 .today-body{
                     width: 100%;
                     height: 100%;
@@ -335,63 +373,90 @@ body {
                     display: block;
                     padding:10px;
                     // cursor: pointer;
-                    height:90px;
+                    height:140px;
                     position: relative;
                     z-index: 121;
-            
+                    border: $border-highlight;
+                    background-color: $accent-color;
+                    color:$primary-color;
+                    // border-radius: $border-radius-big;
+                    // box-shadow: $shadow-card;
                         &__add-button{
                         width:100%;
                         height:100%;
                         &__content{
                             cursor: pointer;
+                            padding:10px;
                         }
                             &__paragraph{
-                                display: inline;
-                                padding-left:15px;
+                                display: inline-block;
+                                padding-left:10px;
+                                font-size: 120%;
+                              
+                                font-weight: map-get($map: $font-weights, $key:medium );
+                                }
+                                &__paragraph::after{
+                                    content: '';
+                                    position: absolute;
+                                    display: block;
+                                    width:85px;
+                                    height: 3px;
+                                    background-color: $accent-color;
                                 }
                             
                                 &__add-icon{
-                                padding:5px;
+                                padding:10px;
                                 margin-top:-4px;
                                 display: inline-block;
-                                border-radius: 50%;
+                                // border-radius:;
+                                // border:$border-accent;
+                                // background-color: $accent-color;
+                                transition-duration: .2s;
                             }
-                            &__add-icon:hover{
-                                background-color: $accent-color;
+                             &__add-icon:hover{
+                                background: none;
                             }
+                           
                         }
                     &__insert-data{
                         display: block;
                         opacity: 0;
                         pointer-events: none;
-                        width:100%;
+                        width:99%;
                         height: 100%;
                         position: absolute;
-                        left:0;
-                        top:50%;
+                        left:1px;
+                        top:0;
                         transition-duration: $transition-duration;
-                        z-index: 20;
-                        padding:5px;
-                        background-color: $primary-color;
-                        border-radius: $border-radius;
+                        z-index: 120;
+                        padding:20px;
+                        background-color: $accent-color;
+                        // border-radius: $border-radius-big;
                             &__input{
-                                width:70%;
-                                height:35px;
+                                width:60%;
+                                height:40px;
                                 padding: 5px;
+                                padding-left:15px;
                                 display: inline-block;
-                                border:$border-gray;
-                                border-top-left-radius:$border-radius;
-                                border-bottom-left-radius:$border-radius;
+                                border:$border-highlight-light;
+                                // border-top-left-radius:$border-radius;
+                                // border-bottom-left-radius:$border-radius;
+                                border-radius: $border-radius;
+                                background-color: $primary-color;
+                              
                             }
                             &__select-date{
                                 display: inline-block;
                                 width:29%;
-                                height:35px;
+                                margin-left:20px;
+                                height:40px;
+                                
                                 position: absolute;
-                                border:$border-gray;
+                                // border:$border-gray;
                                 border-left: none;
-                                border-top-right-radius:$border-radius;
-                                border-bottom-right-radius:$border-radius;
+                                // border-top-right-radius:$border-radius;
+                                // border-bottom-right-radius:$border-radius;
+                                border-radius: $border-radius;
                                 cursor: pointer;
                                 &__overlay{
                                     position: absolute;
@@ -407,15 +472,17 @@ body {
                                     width:100%;
                                     height: 100%;
                                     display: block;
-                                    border:1px solid transparent;
-                                    padding-left:5px;
+                                    border:none;
+                                    padding-left:15px;
                                     background-color: $primary-color;
-                                    border-top-right-radius:$border-radius;
-                                    border-bottom-right-radius:$border-radius;
+                                    // border-top-right-radius:$border-radius;
+                                    // border-bottom-right-radius:$border-radius;
+                                    border-radius: $border-radius;
                                     @include flexCenter(row);
                                     margin:0;
                                     color:$text-color;
                                     cursor: pointer;
+                                    
                                 }
 
                                     &__pop-up{
@@ -425,19 +492,18 @@ body {
                                         height:500px;
                                         width:300px;
                                         left:-50%;
-                                        background-color: $primary-color;
+                                        background-color: $accent-color-darker-reverse;
                                         top:200%;
-                                        z-index: 0;
-                                        border-radius: $border-radius;
+                                        z-index: 1200;
+                                        border-radius:0;
+                                        border: $border-highlight;
                                         box-shadow: $shadow-card;
-                                        border-radius: $border-radius;
                                         opacity: 0;
                                         transition-duration: $transition-duration;
                                         transition-delay: .05s;
                                         display: grid;
                                         grid-template-columns: 100%;
                                         grid-template-rows: 38% 52%  10%;
-                                        border:$border-gray;
                                         
                                         @include mobile() {
                                             left:-120px;
@@ -461,13 +527,15 @@ body {
                                                 display: grid;
                                                 grid-template-columns: 100%;
                                                 grid-template-rows: 1fr 1fr 1fr 1fr;
-                                                border-bottom:$border-gray;
+                                                border-bottom:$border-highlight;
                                                 color:$text-color;
                                                 &__option-today:hover, &__option-tomorrow:hover, &__option-no-date:hover, &__option-next-week:hover{
-                                                    background-color: $accent-color-darker-reverse;
+                                                    background-color: $primary-color;
+                                                    border:$border-accent;
                                                 }
                                                 &__option-today, &__option-tomorrow, &__option-no-date, &__option-next-week{
-                                                    padding: 10px 15px;
+                                                    padding: 8px 15px;
+                                                    border: 1px solid transparent;
                                                 }
                                                 &__option-today{
                                                     
@@ -496,10 +564,11 @@ body {
                                             &__calendar{
                                                 position: relative;
                                                 @include flexCenter(column);
+                                                overflow: hidden;
                                                 
                                             }
                                             &__add-time{
-                                                border-top:$border-gray;
+                                                border-top:$border-highlight;
                                                 cursor: default;
                                                 display: inline;
                                                 @include flexCenter(row);
@@ -516,9 +585,9 @@ body {
                                                     display: block;
                                                     opacity: 0;
                                                     pointer-events: none;
-                                                    background-color: $primary-color;
-                                                    border-radius: $border-radius;
-                                                    border: $border-gray;
+                                                    background-color: $accent-color-darker-reverse;
+                                                    border-radius: 0;
+                                                    border: $border-highlight;
                                                     box-shadow: $shadow-card;
                                                     @include flexCenter(column);
                                                     &__section-2 {
@@ -544,7 +613,7 @@ body {
                                                             text-align: end;
                                                             color:$accent-color;
                                                             text-decoration: none;
-                                                            font-weight: map-get($map: $font-weights, $key: medium);
+                                                            font-weight: map-get($map: $font-weights, $key: bold);
     
                                                         }
                                                       }
@@ -554,7 +623,7 @@ body {
                                                         display: block;
                                                         padding:10px;
                                                         @include flexCenter(row);
-                                                        border-bottom: 1px solid $thirdary-color;;
+                                                        border-bottom: $border-accent;
                                                         justify-content: space-evenly;
                                                         &__label, &__input{
                                                             width:50%;
@@ -574,7 +643,8 @@ body {
                                                             width:70%;
                                                             height: auto;
                                                             border-radius: $border-radius;
-                                                            border:$border-gray
+                                                            border:$border-highlight;
+                                                            padding-left: 15px;
                                                         }
                                           
 
@@ -590,7 +660,7 @@ body {
                                                     color:$accent-color;
                                                     font-weight:map-get($map: $font-weights, $key: bold) ;
                                                     text-decoration: none;
-                                                    width:50%;
+                                                    width:100%;
                                                 }
                                                 &__save-button {
                                                     cursor: pointer;
@@ -600,7 +670,6 @@ body {
                                                     color:$accent-color;
                                                     font-weight:map-get($map: $font-weights, $key: bold) ;
                                                     text-decoration: none;
-                                                    background-color: $primary-color;
                                                     border: none;
                                                 }
                                             }
@@ -624,19 +693,20 @@ body {
 
                             }
                             &__button-submit{
-                                top:50%;
-                                width:calc(59% - 3px);
+                                top:55%;
+                                width:40%;
                                 height:40px;
                                 position: absolute;
-                                left:5px;
-                                background-color: $accent-color;
-                                color:$primary-color;
+                                left:20px;
+                                background-color: $accent-color-darker-reverse;
+                                color:$text-color;
                                 border-radius: $border-radius;
-                                border:$border-gray;
+                                border:none;
                                 font-weight: map-get($map: $font-weights, $key: medium);
                                 @include mobile() {
-                                    width: 50%;
+                                    width: 35%;
                                 }
+                               
                                 &__overlay{
                                     width:100%;
                                     height:100%;
@@ -645,18 +715,21 @@ body {
                                 }
                             }
                             &__button-submit:hover{
+                                transition-duration: $transition-duration;
                                 box-shadow: $shadow-card;
+                                top:53%;
                             }
                             &__button-cancel {
-                                top:50%;
+                                top:55%;
                                 width:29%;
                                 height:40px;
                                 position: absolute;
-                                left:calc(70%-5px);
+                                left:63%;
                                 background-color: $accent-color-darker-reverse;
                                 color:$text-color;
                                 border-radius: $border-radius;
-                                border:$border-gray;
+                                border:none;
+                                font-weight: map-get($map: $font-weights, $key: medium);
                                &__overlay{
                                    width:100%;
                                    height:100%;
@@ -665,40 +738,48 @@ body {
                                }
                             }
                             &__button-cancel:hover {
+                                transition-duration: $transition-duration;
                                 box-shadow: $shadow-card;
-
+                                top:53%;
                             }
                             &__option-priority{
-                                top:50%;
-                                left:61%;
+                                top:55%;
+                                left:calc(45% + 10px);
                                 cursor: pointer;
                                 position: absolute;
                                 background-color: $accent-color-darker-reverse;
-                                color:$primary-color;
+                                border-radius: $border-radius;
                                 @include mobile() {
-                                    left:55%;
+                                    left:calc(40% + 10px);
                                 }
-                                border: $border-gray;
+                                border:none;
                                 &__pop-up {
                                     position: absolute;
                                     width:50%;
                                     left:37%;
                                     height:150%;
-                                    background-color: $primary-color;
-                                    border-radius: $border-radius;
+                                    background-color: $accent-color-darker-reverse;
+                                    border-radius: 0;
                                     box-shadow: $shadow-card;
-                                    top:100%;
+                                    margin-top:5px;
+                                    top:120%;
+                                    border: $border-highlight;
                                     opacity: 0;
+                                    color:$text-color;
+                                    overflow: hidden;
+                                    z-index: 123;
                                     pointer-events: none;
+                                    transition-duration: .3s;
                                     @include flexCenter(column);
                                         &__option-priority-1{
                                             width: 100%;
                                             height:25%;
                                             display: block;
-                                            padding:3px;
+                                            padding:10px;
                                         }
                                         &__option-priority-1:hover{
-                                            background-color: $accent-color-darker-reverse;
+                                            background-color: $accent-color;
+                                            color:$primary-color;
                                             cursor: pointer;
                                         }
                                         &__option-priority-2{
@@ -713,11 +794,18 @@ body {
                                 }
                             }
                             &__option-priority:hover{
+                                transition-duration: $transition-duration;
                                 box-shadow: $shadow-card;
+                                top:53%;
                             }
                         }  
                 }
+                &__task:hover{
+                    transition-duration: .5s;
+                    box-shadow: $shadow-card-large;
+                }
             }
+           
 
     }
 }
